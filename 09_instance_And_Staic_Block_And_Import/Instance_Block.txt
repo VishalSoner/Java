@@ -1,0 +1,805 @@
+// when class Object is Created instance block will be excuted , Constructor ke pahle run hoga
+class A
+{
+	// instance block
+	{	
+		System.out.println("Instance block");
+	}
+	A()
+	{
+		System.out.println("A Constructor");
+	}
+}
+
+class Q01_Instance_Block
+{
+	public static void main(String args[])
+	{
+		A a1 = new A();
+	}
+}
+ 
+/* 
+Output :- 
+Instance block
+A Constructor
+
+------------------------------------------------
+*/
+
+
+
+class A
+{
+	// instance block
+	{	
+		System.out.println("Instance block");
+	}
+	A()
+	{
+		System.out.println("A Constructor");
+	}
+}
+
+class Q02_Instance_Block
+{
+	public static void main(String args[])
+	{
+		A a1 = new A();
+		A a2 = new A();
+	}
+}
+ 
+/* 
+Output :- 
+Instance block
+A Constructor
+
+Instance block
+A Constructor
+
+------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	// instance block
+	{	
+		System.out.println("Instance block");
+	}
+	
+	A()
+	{
+		System.out.println("A Constructor");
+	}
+	
+	A(int x)
+	{
+		System.out.println("A Constructor With Parameter");
+	}
+}
+
+class Q03_Instance_Block
+{
+	public static void main(String args[])
+	{
+		A a1 = new A();
+		A a2 = new A(10);
+	}
+}
+ 
+/* 
+Output :- 
+Instance block
+A Constructor
+
+Instance block
+A Constructor With Parameter
+
+------------------------------------------------
+*/
+
+
+
+
+// Ek class me ek se jyade instance block bana ke ready kar sakte he.
+
+class A
+{
+	// instance block - 1
+	{			System.out.println("Instance block - 1");			 }
+	
+	// instance block - 2
+	{			System.out.println("Instance block - 2");			 }
+	
+	A()
+	{
+		System.out.println("A Constructor");
+	}
+	
+	A(int x)
+	{
+		System.out.println("A Constructor With Parameter");
+	}
+}
+
+class Q04_Instance_Block
+{
+	public static void main(String args[])
+	{
+		A a1 = new A();
+		A a2 = new A(10);
+	}
+}
+ 
+/* 
+Output :- 
+Instance block - 1
+Instance block - 2
+A Constructor
+Instance block - 1
+Instance block - 2
+A Constructor With Parameter
+
+------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	// instance block
+	{			System.out.println("Instance block - 1");			 }
+	
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q05_Instance_Block
+{
+	{
+		System.out.println("Instance block - 1");
+	}
+	public static void main(String args[])
+	{
+		A.show();
+	}
+}
+ 
+/* 
+Output :- 
+A Show Method
+
+------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+// static block execute when is  Class Loadind
+
+class A
+{
+	// instance block
+	{
+		System.out.println("Instance block - 1");			 
+	}
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q06_Static_Block
+{
+	static 
+	{
+		System.out.println("Main Method Static Block");
+	}
+	
+	public static void main(String args[])
+	{
+		A.show();
+	}
+}
+ 
+/* 
+Output :- 
+Main Method Static Block
+A Show Method
+
+------------------------------------------------
+*/
+
+
+
+
+
+class A
+{
+	// instance block
+	{
+		System.out.println("Instance block - 1");			 
+	}
+	
+	static
+	{
+		System.out.println("Class A Static Block");
+	}
+	
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q07_Static_Block
+{
+	static 
+	{
+		System.out.println("Main Method Static Block");
+	}
+	
+	public static void main(String args[])
+	{
+		A.show();
+	}
+}
+ 
+/* 
+Output :- 
+Main Method Static Block
+Class A Static Block
+A Show Method
+
+------------------------------------------------
+*/
+
+
+
+
+
+class A
+{
+	// instance block
+	{
+		System.out.println("Instance block - 1");			 
+	}
+	
+	static
+	{
+		System.out.println("Class A Static Block");
+	}
+	
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q08_Static_Block
+{
+	static 
+	{
+		System.out.println("Main Method Static Block");
+	}
+	
+	public static void main(String args[])
+	{
+		A.show();
+	}
+}
+ 
+/* 
+Output :-
+ 
+Main Method Static Block
+
+------------------------------------------------
+*/
+
+
+
+
+
+class A
+{
+	// instance block
+	{
+		System.out.println("Instance block - 1");			 
+	}
+	
+	static
+	{
+		System.out.println("Class A Static Block");
+	}
+	
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q09_Static_Block
+{
+	static 
+	{
+		System.out.println("Main Method Static Block");
+	}
+	
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+ 
+/* 
+Output :-
+ 
+Main Method Static Block
+Class A Static Block
+Instance block - 1
+A Show Method
+------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	// instance block
+	{
+		System.out.println("Instance block - 1");			 
+	}
+	
+	static
+	{
+		System.out.println("Class A Static Block");
+	}
+	
+	A()
+	{
+		System.out.println("Class A Constructor");
+	}
+	
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q10_Static_Block
+{
+	static 
+	{
+		System.out.println("Main Method Static Block");
+	}
+	
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+ 
+/* 
+Output :-
+ 
+Main Method Static Block
+Class A Static Block
+Instance block - 1
+Class A Constructor
+A Show Method
+
+------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	// instance block
+	{
+		System.out.println("Instance block - 1");			 
+	}
+
+	{
+		System.out.println("Instance block - 2");
+	}
+	
+	static
+	{
+		System.out.println("Class A Static Block - 1");
+	}	
+	static
+	{
+		System.out.println("Class A Static Block - 2");
+	}
+	
+	A()
+	{
+		System.out.println("Class A Constructor");
+	}
+	
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q13_Static_Block
+{
+	static 
+	{
+		System.out.println("Main Method Static Block - 1");
+	}
+
+	static 
+	{
+		System.out.println("Main Method Static Block - 2");
+	}
+	
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+ 
+/* 
+Output :-
+ 
+Main Method Static Block - 1
+Main Method Static Block - 2
+Class A Static Block - 1
+Class A Static Block - 2
+Instance block - 1
+Instance block - 2
+Class A Constructor
+A Show Method
+
+------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	// instance block
+	{
+		System.out.println("Instance block - 1");			 
+	}
+
+	{
+		System.out.println("Instance block - 2");
+	}
+	
+	static
+	{
+		System.out.println("Class A Static Block - 1");
+	}	
+	static
+	{
+		System.out.println("Class A Static Block - 2");
+	}
+	
+	A()
+	{
+		System.out.println("Class A Constructor");
+	}
+	
+	static void show()
+	{
+		System.out.println("A Show Method");
+	}
+}
+
+class Q14_Static_Block
+{
+	static 
+	{
+		System.out.println("Main Method Static Block - 1");
+	}
+
+	static 
+	{
+		System.out.println("Main Method Static Block - 2");
+	}
+	
+	public static void main(String args[])
+	{
+		A a1 = new A();
+		a1.show();
+		
+		A a2 = new A();
+		a2.show();
+	}
+}
+ 
+/* 
+Output :-
+ 
+Main Method Static Block - 1
+Main Method Static Block - 2
+Class A Static Block - 1
+Class A Static Block - 2
+Instance block - 1
+Instance block - 2
+Class A Constructor
+A Show Method
+Instance block - 1
+Instance block - 2
+Class A Constructor
+A Show Method
+
+------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	{
+		System.out.println("A Instance Block");
+	}
+	A()
+	{
+		System.out.println("A Constructor");
+	}
+}
+class B extends A
+{
+	{
+		System.out.println("B Instance Block");
+	}
+	B()
+	{
+		System.out.println("B Constructor");
+	}
+}
+class C extends B
+{
+	{
+		System.out.println("C Instance Block");
+	}
+	C()
+	{
+		System.out.println("C Constructor");
+	}
+}
+
+class Q15_Instance_Block_And_Constructor
+{
+	public static void main(String args[])
+	{
+		C c = new C();
+	}
+}
+ 
+/* 
+Output :-
+
+A Instance Block
+A Constructor
+B Instance Block
+B Constructor
+C Instance Block
+C Constructor
+------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	{
+		System.out.println("A Instance Block");
+	}
+	
+	static
+	{
+		System.out.println("A Static Block");
+	}
+	
+	A()
+	{
+		System.out.println("A Constructor");
+	}
+}
+class B extends A
+{
+	{
+		System.out.println("B Instance Block");
+	}
+	
+	static
+	{
+		System.out.println("B Static Block");
+	}
+	
+	B()
+	{
+		System.out.println("B Constructor");
+	}
+}
+class C extends B
+{
+	{
+		System.out.println("C Instance Block");
+	}
+	
+	static
+	{
+		System.out.println("C Static Block");
+	}
+	
+	C()
+	{
+		System.out.println("C Constructor");
+	}
+}
+
+class Q16_Instance_Static_Block_And_Constructor
+{
+	public static void main(String args[])
+	{
+		C c = new C();
+	}
+}
+ 
+/* 
+Output :-
+ 
+A Static Block
+B Static Block
+C Static Block
+A Instance Block
+A Constructor
+B Instance Block
+B Constructor
+C Instance Block
+C Constructor
+------------------------------------------------
+*/
+
+
+
+
+class Q17_Static_Import
+{
+	public static void main(String args[])
+	{
+		out.println("Vishal Soner");
+	}
+}
+ 
+/* 
+Output :-
+
+Q17_Static_Import.java:5: error: cannot find symbol
+                out.println("Vishal Soner");
+                ^
+------------------------------------------------
+*/
+
+
+
+
+import static java.lang.System.*;
+
+class Q18_Static_Import
+{
+	public static void main(String args[])
+	{
+		out.println("Static Import");
+	}
+}
+ 
+/* 
+Output :-
+
+Static Import
+------------------------------------------------
+*/
+
+
+
+
+import static java.lang.System.*;
+import static java.lang.Integer.*;
+
+class Q19_Static_Import
+{
+	public static void main(String args[])
+	{
+		int x1 = Integer.parseInt(args[0]);
+		int y1 = Integer.parseInt(args[1]);
+		out.println("Sum : " + (x1+y1) );
+
+		int x2 = parseInt(args[0]);
+		int y2 = parseInt(args[1]);
+		out.println("Sum : " + (x2+y2) );
+		
+		out.println(Integer.MAX_VALUE);
+		out.println(MAX_VALUE);
+	}
+}
+ 
+/* 
+Output :-
+
+Sum : 30
+Sum : 30
+2147483647
+2147483647
+
+------------------------------------------------
+*/
+
+
+
+
+import static java.lang.System.*;
+
+class Q20_Static_Import
+{
+	public static void main(String args[])
+	{
+		out.println(MAX_VALUE);
+	}
+}
+ 
+/* 
+Output :-
+
+Q20_Static_Import.java:7: error: cannot find symbol
+                out.println(MAX_VALUE);
+                            ^
+  symbol:   variable MAX_VALUE
+------------------------------------------------
+*/
+
+
+
+
+import static java.lang.System.*;
+import static java.lang.Integer.*;
+import static java.lang.Byte.*;
+
+class Q21_Static_Import
+{
+	public static void main(String args[])
+	{
+		out.println(MAX_VALUE);
+	}
+}
+ 
+/* 
+Output :-
+
+Q21_Static_Import.java:9: error: reference to MAX_VALUE is ambiguous
+                out.println(MAX_VALUE);
+------------------------------------------------
+*/
+
+
+
+
