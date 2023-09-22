@@ -1,0 +1,990 @@
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Intpu_Stream_Reader_1
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.println("Enter Any Character");
+		int a = br.read();
+		
+		System.out.println(a);
+		
+	}
+}
+
+// Input  : abcd
+// Output : 97
+
+// Input  : 123456
+// Output : 49
+
+//----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Intpu_Stream_Reader_2
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.println("Enter Any Character");
+		char a = br.read();
+		
+		System.out.println(a);
+	}
+}
+
+
+/*	Output :-  
+
+error: incompatible types: possible lossy conversion from int to char
+char a = br.read();
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Intpu_Stream_Reader_3
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.println("Enter Any Character");
+		char a = (char)br.read();
+		
+		System.out.println(a);
+	}
+}
+
+
+/*	
+
+Input  :- Vishal
+Output :- V
+
+Input  :- 1234
+Output :- 1
+
+-----------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Intpu_Stream_Reader_4
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.println("Enter Any Character");
+		char a = (char)br.read();
+		char b = (char)br.read();
+		char c = (char)br.read();
+		char d = (char)br.read();
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+	}
+}
+
+
+/*	
+
+Input  :- Vishal
+Output :- V
+		  i
+		  s
+		  h
+		  
+
+Input  :- 1234
+Output :- 1
+		  2
+		  3
+		  4
+		  
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Intpu_Stream_Reader_5
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.println("Enter Any Character");
+		String str = br.readLine();
+		
+		System.out.println(str);
+	}
+}
+
+
+/*	
+
+Input  :- Vishal
+Output :- V
+		  i
+		  s
+		  h
+		  
+
+Input  :- 1234
+Output :- 1
+		  2
+		  3
+		  4
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Intpu_Stream_Reader_6
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.println("Enter Any Two Number : ");
+		System.out.print("1st : ");
+		String s1 = br.readLine();
+		
+		System.out.print("2st : ");
+		String s2 = br.readLine();
+		
+		System.out.println("Concat Two String = " + (s1+s2) );
+		
+		int	x = Integer.parseInt(s1);
+		int y = Integer.parseInt(s2);
+
+		System.out.println("Sum = " + (x+y) );
+	}
+}
+
+/*	
+
+Input :- 
+Enter Any Two Number :
+1st : 10
+2st : 20
+
+Output :- 
+Concat Two String = 1020
+Sum = 30
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Intpu_Stream_Reader_7
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.print("Enter Name : ");
+		String name = br.readLine();
+		
+		System.out.print("Enter Gender : ");
+		char gender = (char)br.read();
+		
+		System.out.print("Enter Address : ");
+		String address = br.readLine();
+		
+		System.out.println("Name : " + name);
+		System.out.println("Gender : " + gender);
+		System.out.println("Address : " + address);
+	}
+}
+
+/*	
+
+Input :- 
+Enter Name : Vishal
+Enter Gender : M
+
+Output :- 
+Enter Address : Name : Vishal
+Gender : M
+Address :
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class Intpu_Stream_Reader_8
+{
+	public static void main(String args[]) throws IOException
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.print("Enter Name : ");
+		char a = (char)br.read();
+		char b = (char)br.read();
+		char c = (char)br.read();
+		char d = (char)br.read();
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+		
+	}
+}
+
+/*	
+
+Input :- 
+Enter Name : abcd
+
+Output :-
+a
+b
+c
+d
+
+Input :-
+Enter Name : abc
+
+Output
+a
+b
+c
+
+Input :- 
+Enter Name : ab
+
+Output :-
+a
+b
+
+Input :-
+Enter Name : a
+
+Output
+a
+
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class Intpu_Stream_Reader_09
+{
+	public static void main(String args[]) throws IOException
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+
+		System.out.print("Enter Name : ");
+		int a = br.read();
+		int b = br.read();
+		int c = br.read();
+		int d = br.read();
+
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+
+	}
+}
+
+/*
+Input :- 
+Enter Name : 1234
+
+Output :- 
+49
+50
+51
+52
+
+
+Input :- 
+Enter Name : 123
+
+Output :- 
+49
+50
+51
+13
+
+
+Input :- 
+Enter Name : 12
+
+Output :- 
+49
+50
+13
+10
+
+
+Input :- 
+Enter Name : 1
+
+Output :- 
+49
+13
+10
+13
+
+
+Input :- 
+Enter Name : 
+
+Output :- 
+13
+10
+13
+10
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+class Q10_Input_Stream_Reader
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.print("Enter Name : ");
+		String name = br.readLine();
+		
+		System.out.print("Enter Gender : ");
+		char gender = (char)br.read();
+		int temp1 = br.read();
+		int temp2 = br.read();
+		
+		System.out.print("Enter Address : ");
+		String address = br.readLine();
+		
+		System.out.println("Name : " + name);
+		System.out.println("Gender : " + gender);
+		System.out.println("Address : " + address);
+		
+		System.out.println("temp1 : " + temp1);
+		System.out.println("temp2 : " + temp2);
+		
+	}
+}
+
+/*	
+
+Input :- 
+Enter Name : Vishal
+Enter Gender : M
+
+Output :- 
+Enter Address : Name : Vishal
+Gender : M
+Address :
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.util.StringTokenizer;
+import java.io.IOException;
+
+class Q11_Input_String_Tokenizer
+{
+	public static void main(String args[]) throws Exception
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		StringTokenizer st = new StringTokenizer(s1);
+		
+		String a1 = st.nextToken();
+		String a2 = st.nextToken();
+		String a3 = st.nextToken();
+		
+		System.out.println(a1);
+		System.out.println(a2);
+		System.out.println(a3);
+	}
+}
+
+/*	
+
+Input :- 
+My Name is Vishal Soner
+
+Output :- 
+My
+Name
+is
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+import java.util.StringTokenizer;
+import java.io.IOException;
+
+class Q12_Input_String_Tokenizer
+{
+	public static void main(String args[]) throws Exception
+	{
+		String s1 = "My Name";
+		
+		StringTokenizer st = new StringTokenizer(s1);
+		
+		String a1 = st.nextToken();
+		String a2 = st.nextToken();
+		String a3 = st.nextToken();
+		
+		System.out.println(a1);
+		System.out.println(a2);
+		System.out.println(a3);
+	}
+}
+
+/*	
+
+Input :- 
+My Name is Vishal Soner
+
+Output :- 
+Exception in thread "main" java.util.NoSuchElementException
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.util.StringTokenizer;
+import java.io.IOException;
+
+class Q13_Input_String_Tokenizer
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.print("Enter String : ");
+		String s1 = br.readLine();
+		
+		StringTokenizer st = new StringTokenizer(s1);
+		
+		String a1 = st.nextToken();
+		String a2 = st.nextToken();
+		String a3 = st.nextToken();
+		String a4 = st.nextToken();
+		
+		System.out.println(a1);
+		System.out.println(a2);
+		System.out.println(a3);
+		System.out.println(a4);
+	}
+}
+
+/*	
+
+Input :- 
+My Name is Vishal Soner
+
+Output :- 
+Exception in thread "main" java.util.NoSuchElementException
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.util.StringTokenizer;
+import java.io.IOException;
+
+class Q14_Input_String_Tokenizer
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.print("Enter Number : ");
+		String s1 = br.readLine();
+		
+		StringTokenizer st = new StringTokenizer(s1);
+		
+		int a1 = Integer.parseInt( st.nextToken() );
+		int a2 = Integer.parseInt( st.nextToken() );
+		int a3 = Integer.parseInt( st.nextToken() );
+		int a4 = Integer.parseInt( st.nextToken() );
+		
+		System.out.println(a1);
+		System.out.println(a2);
+		System.out.println(a3);
+		System.out.println(a4);
+		
+		System.out.println("Sum : " + (a1+a2+a3+a4) );
+	}
+}
+
+/*	
+
+Input :- 
+Enter String : My name is Vishal Soner
+
+Output ;- 
+My
+name
+is
+Vishal
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.util.StringTokenizer;
+import java.io.IOException;
+
+class Q15_Input_String_Tokenizer_hasMoreTokens
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.print("Enter Number : ");
+		String s1 = br.readLine();
+		
+		StringTokenizer st = new StringTokenizer(s1);
+		int sum = 0;
+		
+		System.out.println(st.hasMoreTokens() );
+		
+		while( st.hasMoreTokens() )
+		{
+			String temp = st.nextToken();
+			System.out.println(temp);
+			
+			sum += Integer.parseInt(temp);
+		}
+		
+		System.out.println(st.hasMoreTokens() );
+		System.out.println("\nSum : " + sum);
+		
+	}
+}
+
+/*	
+
+Input :- 10 20 30 40
+
+Output
+true
+10
+20
+30
+40
+false
+
+Sum : 100
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.util.StringTokenizer;
+import java.io.IOException;
+
+class Q16_Input_String_Tokenizer_countToken
+{
+	public static void main(String args[]) throws Exception
+	{
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		
+		System.out.print("Enter Number : ");
+		String s1 = br.readLine();
+		
+		StringTokenizer st = new StringTokenizer(s1);
+		int sum = 0;
+		
+		System.out.println( "Total Tokens : " + st.countTokens() );
+				
+		while( st.countTokens() != 0)
+		{
+			String temp = st.nextToken();
+			System.out.println(temp);
+			
+			sum += Integer.parseInt(temp);
+		}
+
+		System.out.println( "Total Tokens : " + st.countTokens() );
+		System.out.println("\nSum : " + sum);
+	}
+}
+
+/*	
+
+Input :- 
+Enter Number : 10 20 30 40
+
+Output :- 
+Total Tokens : 4
+10
+20
+30
+40
+Total Tokens : 0
+
+Sum : 100
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+import java.util.Scanner;
+import java.io.IOException;
+
+class Q17_Scanner_Next
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter Number : ");
+		String s1 = sc.next();
+		String s2 = sc.next();
+		String s3 = sc.next();
+		String s4 = sc.next();
+		
+		System.out.println("Output : " + s1);
+		System.out.println("Output : " + s2);
+		System.out.println("Output : " + s3);
+		System.out.println("Output : " + s4);
+	}
+}
+
+/*	
+Input :- 
+Enter Number : 10 20 30 40 50
+
+Output : 10
+Output : 20
+Output : 30
+Output : 40
+
+
+Input :- 
+Enter Number : 10 
+20 
+30
+40
+
+Output : 10
+Output : 20
+Output : 30
+Output : 40
+
+
+
+
+Input :- 
+Enter Number : Enter
+10 
+20 
+30
+40
+
+Output : 10
+Output : 20
+Output : 30
+Output : 40
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.util.Scanner;
+import java.io.IOException;
+
+class Q18_Scanner_nextLine
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter Number : ");
+		String s1 = sc.nextLine();
+		String s2 = sc.nextLine();
+		
+		System.out.println("Output : " + s1);
+		System.out.println("Output : " + s2);
+	}
+}
+
+/*	
+Input :- 
+Enter Number : 10 20 30 40
+
+Output :-
+Output : 10 20 30 40
+------
+
+
+Input :- 
+Enter Number : 10 20 30 40
+Enter
+
+Output :-
+Output : 10 20 30 40
+Output : blank
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.util.Scanner;
+import java.io.IOException;
+
+class Q19_Scanner_nextInt
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter 1st : ");
+		int a1 = sc.nextInt();
+		
+		System.out.print("Enter 2nd : ");
+		int a2 = sc.nextInt();
+		
+		System.out.println("a1 : " + a1);
+		System.out.println("a2 : " + a2);
+		
+		System.out.println("Sun : " + (a1+a2) );
+	}
+}
+
+/*	
+Input :- 
+Enter Name : 10 20 30 40
+
+Output :-
+Output : 10 20 30 40
+------
+
+
+Input :- 
+Enter Name : 10 20 30 40
+Enter
+
+Output :-
+Output : 10 20 30 40
+Output : blank
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.util.Scanner;
+import java.io.IOException;
+
+class Q20_Command_Line_Argument
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		String a1 = args[0];
+		String a2 = args[1];
+		String a3 = args[2];
+		
+		System.out.println("a1 : " + a1);
+		System.out.println("a2 : " + a2);
+		System.out.println("a3 : " + a3);
+		
+		System.out.println("Sum : " + (a1+a2+a3) );
+		
+		int b1 = Integer.parseInt(a1);
+		int b2 = Integer.parseInt(a2);
+		int b3 = Integer.parseInt(a3);
+		
+		System.out.println("Sum : " + (b1+b2+b3) );
+		
+		
+	}
+}
+
+/*	
+
+javac Q20_Command_Line_Argument.java
+
+Input :- 
+java Q20_Command_Line_Argument 10 20 30
+a1 : 10
+a2 : 20
+a3 : 30
+Sum : 102030
+Sum : 60
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
+import java.util.Scanner;
+import java.io.IOException;
+
+class Q21_Command_Line_Argument
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		String a1 = args[0];
+		String a2 = args[1];
+		String a3 = args[2];
+		
+		System.out.println("a1 : " + a1);
+		System.out.println("a2 : " + a2);
+		System.out.println("a3 : " + a3);
+		
+		System.out.println("Sum : " + (a1+a2+a3) );
+		
+		int b1 = Integer.parseInt(a1);
+		int b2 = Integer.parseInt(a2);
+		int b3 = Integer.parseInt(a3);
+		
+		System.out.println("Sum : " + (b1+b2+b3) );
+		
+		
+	}
+}
+
+/*	
+
+javac Q21_Command_Line_Argument.java
+
+Input :- 
+java Q21_Command_Line_Argument 
+Exception thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+
+
+
+
+javac Q21_Command_Line_Argument.java
+
+Input :- 
+java Q21_Command_Line_Argument  10
+Exception thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+
+
+
+
+
+javac Q21_Command_Line_Argument.java
+
+Input :- 
+java Q21_Command_Line_Argument  10 20 
+Exception thread "main" java.lang.ArrayIndexOutOfBoundsException: 2
+
+
+
+
+
+javac Q21_Command_Line_Argument.java
+
+Input :- 
+java Q21_Command_Line_Argument  10 20 30
+a1 : 10
+a2 : 20
+a3 : 30
+Sum : 102030
+Sum : 60
+
+
+
+--------------------------------------------------------------------------------------------------------------------------	*/
+
+
+
+
+
