@@ -1,0 +1,885 @@
+class A
+{
+	void sum(int a)
+	{
+		System.out.println("Sum : " + a);
+	}
+
+	void sum(int a, int b)
+	{
+		System.out.println("Sum : " + (a+b) );
+	}
+	
+
+	void sum(int a, int b, int c)
+	{
+		System.out.println("Sum : " + (a+b+c) );
+	}
+	
+	
+}
+
+class Q01_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		a.sum(10, 20, 30);
+	}
+}
+
+/* 
+Output :- 
+
+Sum : 10
+Sum : 30
+Sum : 60
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void sum(int a)
+	{
+		System.out.println("Sum : " + a);
+	}
+
+	void sum(int a, int b)
+	{
+		System.out.println("Sum : " + (a+b) );
+	}
+	
+
+	void sum(int a, int b, int c)
+	{
+		System.out.println("Sum : " + (a+b+c) );
+	}
+	
+	
+}
+
+class Q02_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		a.sum(10, 20, 30);
+		a.sum(10, 20, 30, 40);
+	}
+}
+
+/* 
+Output :- At a Compile time.
+
+no suitable method found for sum(int,int,int,int)
+	a.sum(10, 20, 30, 40);
+	 ^
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void sum(int ...a)
+	{
+		System.out.println("Class A");
+	}
+}
+
+class Q03_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		a.sum(10, 20, 30);
+		a.sum(10, 20, 30, 40);
+	}
+}
+
+/* 
+Output :- 
+
+Class A
+Class A
+Class A
+Class A
+
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void sum(int ...a)
+	{
+		int count = 0;
+		for(int i = 0; i < a.length; i++)
+		{
+			count += a[i];
+		}
+		System.out.println("Sum : " + count);
+	}
+	
+}
+
+class Q04_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		a.sum(10, 20, 30);
+		a.sum(10, 20, 30, 40);
+	}
+}
+
+/* 
+Output :- 
+
+Sum : 10
+Sum : 30
+Sum : 60
+Sum : 100
+
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	int count;
+	void sum(int ...a)
+	{
+		for(int i : a)
+		{
+			count += i;
+		}
+		System.out.println("Sum : " + count);
+	}
+	
+}
+
+class Q05_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		a.sum(10, 20, 30);
+		a.sum(10, 20, 30, 40);
+	}
+}
+
+/* 
+Output :- 
+
+Sum : 10
+Sum : 30
+Sum : 60
+Sum : 100
+
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	int count;
+	void sum(int ...a, int b)
+	{
+		for(int i : a)
+		{
+			count += i;
+		}
+		System.out.println("Sum : " + count);
+	}
+	
+}
+
+class Q06_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		a.sum(10, 20, 30);
+		a.sum(10, 20, 30, 40);
+	}
+}
+
+/* 
+Output :- 
+
+Q06_Var_Args.java:4: error: ')' expected
+    void sum(int ...a, int b)
+					^
+Q06_Var_Args.java:4: error: ';' expected
+        void sum(int ...a, int b)
+								^
+
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void sum(int x, int ...a)
+	{
+		int count = 0;
+		for(int i : a)
+		{
+			count += i;
+		}
+		System.out.println("Sum : " + count);
+	}
+	
+}
+
+class Q07_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		
+		a.sum();
+	}
+}
+
+/* 
+Output :- 
+
+ error: method sum in class A cannot be applied to given types;
+                a.sum();
+                 ^
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void sum(int ...a, int ...b)
+	{
+		System.out.println("Class A");
+	}
+	
+}
+
+class Q08_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.sum(10);
+		a.sum(10, 20);
+		a.sum(10, 20, 30);
+	}
+}
+
+/* 
+Output :- 
+
+Q08_Var_Args.java:3: error: ')' expected
+        void sum(int ...a, int ...b)
+                         ^
+Q08_Var_Args.java:3: error: <identifier> expected
+        void sum(int ...a, int ...b)
+                              ^
+Q08_Var_Args.java:3: error: <identifier> expected
+        void sum(int ...a, int ...b)
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void sum(int []a)
+	{
+		int count = 0;
+		
+		for(int i : a)
+		{
+			count += i;
+		}
+
+		System.out.println("Sum : " + count);
+	}
+	
+}
+
+class Q09_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		int x[] = {10, 20, 30, 40};
+		int y[] = {1, 2, 3, 4};
+		a.sum(x);
+		a.sum(y);
+	}
+}
+
+/* 
+Output :- 
+
+Sum : 100
+Sum : 10
+
+-------------------------------------------------------------------
+*/
+
+
+
+
+// •	There can be only one variable argument in the method.
+// •	Variable argument (varargs) must be the last argument.
+
+
+class A
+{
+	void sum(int []a)
+	{}
+	
+	void sum(int ...a)
+	{}
+	
+}
+
+class Q10_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		int x[] = {10, 20, 30, 40};
+		int y[] = {1, 2, 3, 4};
+		a.sum(x);
+		a.sum(y);
+	}
+}
+
+/* 
+Output :- 
+
+Q10_Var_Args.java:10: error: cannot declare both sum(int...) and sum(int[]) in A
+        void sum(int ...a)
+             ^
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("Integer");
+	}
+	
+	void show(String ...a)
+	{
+		System.out.println("String");
+	}
+	
+	void show(boolean ...a)
+	{
+		System.out.println("Boolean");
+	}
+}
+
+class Q11_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		
+		a.show(10, 20, 30);
+		a.show("A", "B", "C");
+		a.show(true, false, true, false);
+	}
+}
+
+/* 
+Output :- 
+
+Integer
+String
+Boolean
+           ^
+-------------------------------------------------------------------
+*/
+
+
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("Integer");
+	}
+}
+
+class Q12_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		
+		a.show();
+	}
+}
+
+/* 
+Output :- 
+
+Integer
+           ^
+-------------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	void show(String ...a)
+	{
+		System.out.println("String");
+	}
+}
+
+class Q13_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		
+		a.show();
+	}
+}
+
+/* 
+Output :- 
+
+String
+-------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("Integer");
+	}
+	
+	void show(String ...a)
+	{
+		System.out.println("String");
+	}
+	
+	void show(boolean ...a)
+	{
+		System.out.println("Boolean");
+	}
+}
+
+class Q14_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		
+		a.show();
+	}
+}
+
+/* 
+Output :- 
+
+Q14_Var_Args.java:25: error: reference to show is ambiguous
+                a.show();
+                 ^
+-------------------------------------------------------------------
+*/
+
+
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("var Args Lower");
+	}
+
+	void show(int a)
+	{
+		System.out.println("var Args Higher");
+	}
+	
+}
+
+class Q15_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		
+		a.show(10);
+		a.show(10, 20);
+		a.show(10, 20, 30);
+	}
+}
+
+/* 
+Output :- 
+
+var Args Higher
+var Args Lower
+var Args Lower
+-------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+//We can pass Array and multiple args. in var args
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("var Args");
+	}
+}
+
+class Q16_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show(10, 20, 30);
+		
+		int x[] = {10, 20, 30};
+		a.show(x);
+	}
+}
+
+/* 
+Output :- 
+
+var Args
+var Args
+-------------------------------------------------------------------
+*/
+
+
+
+
+//We can't pass 2'D Array in This Type.
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("var Args");
+	}
+}
+
+class Q17_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+
+		int x[][] = { {10, 20, 30},
+					  {40, 50, 60}  };
+		a.show(x);
+	}
+}
+
+/* 
+Output :- 
+
+method show in class A cannot be applied to given types;
+                a.show(x);
+                 ^
+-------------------------------------------------------------------
+*/
+
+
+
+
+//We can pass 2'D Array in This Type.
+
+class A
+{
+	void show(int[] ...a)
+	{
+		System.out.println("var Args");
+	}
+}
+
+class Q18_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+
+		int x[][] = { {10, 20, 30},
+					  {40, 50, 60}  };
+		a.show(x);
+	}
+}
+
+/* 
+Output :- 
+
+var Args
+-------------------------------------------------------------------
+*/
+
+
+
+
+
+class A
+{
+	void show(int[] ...a)
+	{
+		int count = 0;
+		
+		for(int i[] : a)
+		{
+			for(int j : i)
+			{
+				count += j;
+			}
+		}
+		System.out.println("Sum : " + count);
+	} 	
+	
+	void show(int[][] ...a)
+	{
+		int count = 0;
+		
+		for(int i[][] : a)
+		{
+			for(int j[] : i)
+			{
+				for(int k : j)
+				{
+					count += k;
+				}
+			}
+		}
+		System.out.println("Sum : " + count);
+	} 
+}
+
+class Q19_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+
+		int x1[][] = { {10, 20, 30},
+					  {40, 50, 60}  };
+		a.show(x1);
+		
+		int x2[][][] = { { {10, 20}, {30, 40} },
+						 { {50, 60}, {70, 80} },
+						 { {90, 100}, {110, 120} }};
+		a.show(x2);
+	}
+}
+
+/* 
+Output :- 
+
+Sum : 210
+Sum : 780
+-------------------------------------------------------------------
+*/
+
+
+
+
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("Vishal Soner");
+	} 	
+	
+}
+
+class Q20_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		int x = 10, y = 20;
+		
+		a.show(x, y);
+	}
+}
+
+/* 
+Output :- 
+
+Vishal Soner
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("Vishal Soner");
+	} 	
+	
+}
+
+class Q21_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		int x[] = {10, 20};
+		int y[] = {30, 40};
+		
+		a.show(x, y);
+	}
+}
+
+/* 
+Output :- 
+
+Q21_Var_Args.java:18: error: method show in class A cannot be applied to given types;
+                a.show(x, y);
+                 ^
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void show(int[] ...a)
+	{
+		System.out.println("Vishal Soner");
+	} 	
+	
+}
+
+class Q22_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		int x[] = {10, 20};
+		int y[] = {30, 40};
+		
+		a.show(x, y);
+	}
+}
+
+/* 
+Output :- 
+
+Vishal Soner
+-------------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void show(int ...a)
+	{
+		System.out.println("Only var args");
+	}
+
+	void show(int[] ...a)
+	{
+		System.out.println("Array + var args");
+	} 	
+	
+}
+
+class Q23_Var_Args
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		int a1 = 10, b1 = 20;
+		a.show(a1, b1);
+		
+		int x[] = {10, 20};
+		int y[] = {30, 40};
+		a.show(x, y);
+		
+		int x1[][] = {	{10, 20}, {30, 40}	};
+		
+		a.show(x1);
+	}
+}
+
+/* 
+Output :- 
+
+Only var args
+Array + var args
+Array + var args
+-------------------------------------------------------------------
+*/
+
+
+
+
