@@ -1,0 +1,435 @@
+int		length();
+char 	charAt(int);
+String  concat(String);
+String  toUpperCase(String);
+String  toLOwerCase(String);
+String  compareTo(String);
+String  compareToIgnoreCase(String);
+String  equals(String);
+String  equalsIgnoreCase(String);
+
+String  subString(int);
+String  subString(int , int);
+String  startsWith(String);
+String  endsWith(String);
+
+int indexOf(String);
+int lastIndexOf(String);
+
+String  trim(String);
+String  replace(char, char);
+String  split(String);
+----------------------------------------------------------------------------------------------------------------------------
+
+
+class Q01_Length
+{
+	public static void main(String args[])
+	{
+		String s1 = "vishal Soner";
+		
+		System.out.println( s1.length() );
+		
+	}
+}
+/*
+ 
+12
+
+-------------------------------------------------------- 
+*/
+
+
+
+
+class Q02_charAt
+{
+	public static void main(String args[])
+	{
+		String s1 = "vishal Soner";
+		
+		System.out.println( s1.charAt(0) );
+		System.out.println( s1.charAt(1) );
+		System.out.println( s1.charAt(2) );
+		System.out.println( s1.charAt(3) );
+		System.out.println( s1.charAt(4) );
+		System.out.println( s1.charAt(8) );
+		
+		
+		System.out.println( s1.charAt(-2) );
+		System.out.println( s1.charAt(15) );
+		
+	}
+}
+/*
+ 
+v
+i
+s
+h
+a
+o
+
+java.lang.StringIndexOutOfBoundsException
+java.lang.StringIndexOutOfBoundsException
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q03_concat
+{
+	public static void main(String args[])
+	{
+		String s1 = "Vishal";
+		String s2 = "Soner";
+		
+		System.out.println( s1.concat(s2) );
+		
+	}
+}
+/*
+ 
+v
+i
+s
+h
+a
+o
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q04_toUpperCase
+{
+	public static void main(String args[])
+	{
+		String s1 = "Vishal Soner";
+		
+		System.out.println( s1.toUpperCase() );
+		
+	}
+}
+/*
+ 
+VISHAL SONER
+-------------------------------------------------------- 
+*/
+
+
+class Q05_toLowerCase
+{
+	public static void main(String args[])
+	{
+		String s1 = "Vishal Soner";
+		
+		System.out.println( s1.toLowerCase() );
+		
+	}
+}
+/*
+ 
+vishal soner
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+
+class Q06_compareTo
+{
+	public static void main(String args[])
+	{
+		String s1 = "5";
+		String s2 = "1";
+		
+		System.out.println( s1.compareTo(s2) );
+		
+	}
+}
+/*
+ 
+4
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q07_compareToIgnoreCase
+{
+	public static void main(String args[])
+	{
+		String s1 = "5";
+		String s2 = "1";
+		
+		System.out.println( s1.compareToIgnoreCase(s2) );
+		
+	}
+}
+/*
+ 
+4
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q08_Equals
+{
+	public static void main(String args[])
+	{
+		String s1 = "vishal";
+		String s2 = "vishal";
+		String s3 = "Vishal";
+		
+		System.out.println( s1.equals(s2) );
+		System.out.println( s1.equals(s3) );
+		
+	}
+}
+/*
+ 
+true
+false
+-------------------------------------------------------- 
+*/
+
+
+
+
+class Q09_EqualsIgnoreCase
+{
+	public static void main(String args[])
+	{
+		String s1 = "vishal";
+		String s2 = "vishal";
+		String s3 = "Vishal";
+		
+		System.out.println( s1.equalsIgnoreCase(s2) );
+		System.out.println( s1.equalsIgnoreCase(s3) );
+		
+	}
+}
+/*
+ 
+true
+true
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q10_subString1
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		System.out.println( s1.substring(5) );
+		
+	}
+}
+/*
+ 
+me is Vishal Soner
+-------------------------------------------------------- 
+*/
+
+
+
+
+class Q11_subString2
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		System.out.println( s1.substring(0, 4) );
+		System.out.println( s1.substring(2, 4) );
+		System.out.println( s1.substring(4, 4) );
+		System.out.println( s1.substring(2, 100) );
+		
+	}
+}
+/*
+ 
+My N
+ N
+black
+java.lang.StringIndexOutOfBoundsException
+-------------------------------------------------------- 
+*/
+
+
+
+
+class Q12_startsWith
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		System.out.println( s1.startsWith("my") );
+		System.out.println( s1.startsWith("My") );
+		
+	}
+}
+/*
+ 
+false
+true
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q13_endsWith
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		System.out.println( s1.endsWith("er") );
+		System.out.println( s1.endsWith("Soner") );
+		
+	}
+}
+/*
+ 
+true
+true
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q14_indexOf
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		System.out.println( s1.indexOf("m") );
+		System.out.println( s1.indexOf("is") );
+		
+	}
+}
+/*
+ 
+5
+8
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q15_lastIndexOf
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		System.out.println( s1.lastIndexOf("m") );
+		System.out.println( s1.lastIndexOf("s") );
+		
+	}
+}
+/*
+ 
+5
+13
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q16_trim
+{
+	public static void main(String args[])
+	{
+		String s1 = "			My Name is Vishal Soner			";
+		
+		System.out.println( s1);
+		System.out.println( s1.trim() );
+		
+	}
+}
+/*
+ 
+                        My Name is Vishal Soner
+My Name is Vishal Soner
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+class Q17_repalce
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		System.out.println( s1);
+		System.out.println( s1.replace('v', 'm') );
+		System.out.println( s1.replace('m', 'w') );
+		
+	}
+}
+/*
+ 
+My Name is Vishal Soner
+My Name is Vishal Soner
+My Nawe is Vishal Soner
+-------------------------------------------------------- 
+*/
+
+
+
+
+
+
+
+
+class Q18_split
+{
+	public static void main(String args[])
+	{
+		String s1 = "My Name is Vishal Soner";
+		
+		String str[] = s1.split("");
+		
+		for( String s : str)
+			System.out.print( s +"  ");
+		
+	}
+}
+/*
+ 
+M  y     N  a  m  e     i  s     V  i  s  h  a  l     S  o  n  e  r
+-------------------------------------------------------- 
+*/
+
+
