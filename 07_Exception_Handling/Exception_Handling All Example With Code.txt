@@ -1,0 +1,1643 @@
+class Q01_Exception_Handling_try
+{
+	public static void main(String args[])
+	{
+		int x = Integer.parseInt( args[0] );
+		int y = Integer.parseInt( args[1] );
+		
+		try
+		{
+			System.out.println( x/y );
+		}
+	}
+}
+
+  
+Output :- 
+
+error: 'try' without 'catch', 'finally' or resource declarations
+
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+class Q02_Exception_Handling_Catch
+{
+	public static void main(String args[])
+	{
+		int x = Integer.parseInt( args[0] );
+		int y = Integer.parseInt( args[1] );
+		
+		catch( Exception we)
+		{
+			System.out.println( x/y );
+		}
+	}
+}
+
+  
+Output :- 
+
+: error: 'catch' without 'try'
+
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+import java.util.Scanner;
+
+class Q03_Exception_Handlingclass_try_Catch
+{
+	public static void main(String args[])
+	{
+		int x = Integer.parseInt( args[0] );
+		int y = Integer.parseInt( args[1] );
+		
+		catch( Exception we)
+		{
+			System.out.println( x/y );
+		}
+	}
+}
+
+  
+Output :- 
+
+: error: 'catch' without 'try'
+
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter X : ");
+		int x = sc.nextInt();
+		System.out.print("Enter Y: ");
+		int y = sc.nextInt();
+		
+		try
+		{
+			System.out.println("\nOutput : " + x/y );
+		}
+		catch( ArithmeticException e)
+		{
+			System.out.println( e );
+		}
+	}
+}
+
+  
+
+Case - 1 
+input : 
+Enter X : 10
+Enter Y: 20
+
+Output : 0
+
+
+..................
+
+
+Case - 2
+input : 
+Enter X : 100
+Enter Y: 20
+
+Output : 5
+
+.................
+
+
+Case - 3
+input :
+
+Enter X : 0
+Enter Y: 20
+
+Output : 0
+
+
+.................
+
+
+Case - 4
+input :
+Enter X : 100
+Enter Y: 0
+
+Output :- 
+java.lang.ArithmeticException: / by zero
+
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+class Q04_Exception_Handling_try_Catch
+{
+	public static void main(String args[])
+	{
+		int x = Integer.parseInt(args[0]);
+		int y = Integer.parseInt(args[1]);
+		
+		try
+		{
+			System.out.println("Output : " + x/y );
+		}
+		
+		catch( ArithmeticException e)
+		{
+			System.out.println( "ArithmeticException Catch Block" );
+		}
+		catch( NumberFormatException e)
+		{
+			System.out.println( "NumberFormatException Catch Block" );
+		}
+		catch( ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println( "ArrayIndexOutOfBoundsException Catch Block" );
+		}
+	}
+}
+
+  
+
+Case - 1 
+Input : 100  20
+Output : 5
+
+
+Case - 2
+Input : 100  0
+ArithmeticException Catch Block
+
+
+Case - 3
+Input : 100  abc
+Exception in thread "main" java.lang.NumberFormatException: For input string: "ab"
+
+
+Case - 4
+Input : 100
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+class Q05_Exception_Handling_Finally_Block
+{
+	public static void main(String args[])
+	{
+		System.out.println("Open");
+		try
+		{
+			int x = Integer.parseInt(args[0]);
+			int y = Integer.parseInt(args[1]);
+			System.out.println(x + "  " + y);
+			System.out.println("Ans : " + x/y );
+		}
+		
+		finally
+		{
+			System.out.println("Finally Block");
+		
+		}
+		System.out.println("Close");
+	}
+}
+
+  
+
+Case - 1 
+Input  : 100  20
+
+Output : 
+Open
+Ans : 5
+Finally Block
+Close
+
+
+.........
+
+Case - 2
+Input  : 100 0
+
+Output : 
+Open
+Finally Block
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+
+
+
+Case - 3 
+Input  : 100 ab
+
+Output : 
+Open
+Finally Block
+Exception in thread "main" java.lang.NumberFormatException: For input string: "ab"
+
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+class Q06_Exception_Handling_Try_Catch_Finally
+{
+	public static void main(String args[])
+	{
+		System.out.println("Open");
+		try
+		{
+			int x = Integer.parseInt(args[0]);
+			int y = Integer.parseInt(args[1]);
+			System.out.println("Ans : " + x/y );
+		}
+		catch(Exception e)
+		{
+			System.out.println("Catch Block");
+		}
+		finally
+		{
+			System.out.println("Finally Block");
+		
+		}
+		System.out.println("Close");
+	}
+}
+
+  
+
+Case - 1 
+Input  : 100  20
+
+Output : 
+Open
+Ans : 5
+Finally Block
+Close
+
+
+.........
+
+Case - 2
+Input  : 100 0
+
+Output : 
+Open
+Catch Block
+Finally Block
+Close
+
+
+
+Case - 3 
+Input  : 100 ab
+
+Output : 
+Open
+Catch Block
+Finally Block
+Close
+
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+class Q07_Exception_Handling_Try_Finally_Catch
+{
+	public static void main(String args[])
+	{
+		System.out.println("Open");
+		try
+		{
+			int x = Integer.parseInt(args[0]);
+			int y = Integer.parseInt(args[1]);
+			System.out.println("Ans : " + x/y );
+		}
+		finally
+		{
+			System.out.println("Finally Block");
+		
+		}
+		catch(Exception e)
+		{
+			System.out.println("Catch Block");
+		}
+		System.out.println("Close");
+	}
+}
+
+  
+
+error: 'catch' without 'try'
+    catch(Exception e)
+    ^
+
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+class Q08_Exception_Handling_Try_Catch
+{
+	public static void main(String args[])
+	{
+		System.out.println("Open");
+		try
+		{
+			int x = Integer.parseInt(args[0]);
+			int y = Integer.parseInt(args[1]);
+			System.out.println("Ans : " + x/y );
+		}
+
+		System.out.println("Hello");
+		
+		catch(Exception e)
+		{
+			System.out.println("Catch Block");
+		}
+		System.out.println("Close");
+	}
+}
+
+  
+
+error: 'try' without 'catch', 'finally' or resource declarations
+                try
+                ^
+error: 'catch' without 'try'
+                catch(Exception e)
+--------------------------------------------------------------------------------------------- 
+ 
+
+
+
+
+import java.util.Scanner;
+
+class Q09_Exception_Handling_Throw_Keyword
+{
+	public static void main(String args[])
+	{
+		System.out.print("Enter Age : ");
+		Scanner sc = new Scanner(System.in);
+		byte age = sc.nextByte();
+		
+		if( age < 18)
+		{
+			System.out.print("Invalid Age, you Can't Drive ");
+		}
+		else
+		{
+			System.out.print("Welcome you Can Drive ");
+		}
+		System.out.println("Vishal");
+	}
+}
+
+ 
+input : 
+Enter Age : 10
+
+Output :
+Invalid Age, you Can't Drive Vishal
+
+----------------------------
+
+input : 
+Enter Age : 50
+
+Output :
+Welcome you Can Drive Vishal
+---------------------------------------------------------------------------------------------
+ 
+
+
+
+
+import java.util.Scanner;
+
+class Q10_Exception_Handling_Throw_Keyword
+{
+	public static void main(String args[])
+	{
+		System.out.print("Enter Age : ");
+		Scanner sc = new Scanner(System.in);
+		byte age = sc.nextByte();
+		
+		if( age < 18)
+		{
+			ArithmeticException are = new ArithmeticException();
+			throw are;
+		}
+		else
+		{
+			System.out.print("Welcome you Can Drive ");
+		}
+		System.out.println("Vishal");
+	}
+}
+
+ 
+input : 
+Enter Age : 50
+
+Output :
+Welcome you Can Drive Vishal
+
+----------------------------
+
+input : 
+Enter Age : 10
+
+Output :
+Exception in thread "main" java.lang.ArithmeticException
+        at Q10_Exception_Handling_Throw_Keyword.main(Q10_Exception_Handling_Throw_Keyword.java:13)
+---------------------------------------------------------------------------------------------
+ 
+
+
+
+
+import java.util.Scanner;
+
+class Q11_Exception_Handling_Throw_Keyword
+{
+	public static void main(String args[])
+	{
+		System.out.print("Enter Age : ");
+		Scanner sc = new Scanner(System.in);
+		byte age = sc.nextByte();
+		
+		if( age < 18)
+		{
+			ArithmeticException are = new ArithmeticException("Invalid Age");
+			throw are;
+		}
+		else
+		{
+			System.out.print("Welcome you Can Drive ");
+		}
+		System.out.println("Vishal");
+	}
+}
+
+ 
+input : 
+Enter Age : 50
+
+Output :
+Welcome you Can Drive Vishal
+
+----------------------------
+
+input : 
+Enter Age : 10
+
+Output :
+Exception in thread "main" java.lang.ArithmeticException: Invalid Age
+---------------------------------------------------------------------------------------------
+ 
+
+
+
+
+import java.util.Scanner;
+
+class Invalid_Age extends RuntimeException
+{
+	Invalid_Age()
+	{}
+
+	Invalid_Age(String s1)
+	{
+		super(s1);
+	}
+}
+
+class Q12_Exception_Handling_User_Define_Exception
+{
+	public static void main(String args[])
+	{
+		System.out.print("Enter Age : ");
+		Scanner sc = new Scanner(System.in);
+		byte age = sc.nextByte();
+
+		if( age < 18)
+		{
+			Invalid_Age ige = new Invalid_Age();
+			throw ige;
+		}
+		else
+		{
+			System.out.print("Welcome you Can Drive ");
+		}
+		System.out.println("Vishal");
+	}
+}
+
+ 
+input :
+Enter Age : 50
+
+Output :
+Welcome you Can Drive Vishal
+
+----------------------------
+
+input :
+Enter Age : 10
+
+Output :
+Exception in thread "main" Invalid_Age
+---------------------------------------------------------------------------------------------
+ 
+
+
+
+
+import java.util.Scanner;
+
+class Invalid_Age extends RuntimeException
+{
+	Invalid_Age()
+	{}
+
+	Invalid_Age(String s1)
+	{
+		super(s1);
+	}
+}
+
+class Q13_Exception_Handling_User_Define_Exception
+{
+	public static void main(String args[])
+	{
+		System.out.print("Enter Age : ");
+		Scanner sc = new Scanner(System.in);
+		byte age = sc.nextByte();
+
+		if( age < 18)
+		{
+			Invalid_Age ige = new Invalid_Age("Age : " + age);
+			throw ige;
+		}
+		else
+		{
+			System.out.print("Welcome you Can Drive ");
+		}
+		System.out.println("Vishal");
+	}
+}
+
+ 
+input :
+Enter Age : 50
+
+Output :
+Welcome you Can Drive Vishal
+
+----------------------------
+
+input :
+Enter Age : 10
+
+Output :
+Exception in thread "main" Invalid_Age: Age : 10
+
+---------------------------------------------------------------------------------------------
+ 
+
+
+
+
+import java.io.*;
+
+class Q14_Exception_Handling_Throws_Keyword
+{
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		PrintWriter pw = new PrintWriter("A.txt");
+		pw.print("Vishal Soner");
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+ 
+input :
+
+error:  unreported exception FileNotFoundException; must be caught or declared to be thrown
+        PrintWriter pw = new PrintWriter("A.txt");
+						 ^
+---------------------------------------------------------------------------------------------
+ 
+
+
+
+
+import java.io.*;
+
+class Q15_Exception_Handling_Throws_Keyword
+{
+	public static void main(String args[]) throws FileNotFoundException
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		PrintWriter pw = new PrintWriter("A.txt");
+		pw.print("Vishal Soner");
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+
+input :
+
+Vishal Soner - 1
+Vishal Soner - 2
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+import java.io.*;
+
+class Q16_Exception_Handling_Throws_Keyword
+{
+	public static void main(String args[]) throws ArithmeticException
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		System.out.println("Ans : " + 10/0);
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+class Q17_Exception_Handling_Dropdown_Exception
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		System.out.println(10/0);
+		System.out.println("Show - 2.2");
+	}
+	
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		show2();
+		System.out.println("Show - 1.2");
+	}
+	public static void main(String args[]) throws ArithmeticException
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		Q17_Exception_Handling_Dropdown_Exception q17 = new Q17_Exception_Handling_Dropdown_Exception();
+		q17.show1();
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+class Q18_Exception_Handling_Dropdown_Exception
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		try
+		{
+			System.out.println(10/0);
+		}
+		catch( Exception e)
+		{
+			System.out.println("Show2 Exception");
+		}
+		System.out.println("Show - 2.2");
+	}
+	
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		show2();
+		System.out.println("Show - 1.2");
+	}
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		Q18_Exception_Handling_Dropdown_Exception q18 = new Q18_Exception_Handling_Dropdown_Exception();
+		q18.show1();
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+Show2 Exception
+Show - 2.2
+Show - 1.2
+Vishal Soner - 2
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+class Q19_Exception_Handling_Dropdown_Exception
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		System.out.println(10/0);
+		System.out.println("Show - 2.2");
+	}
+	
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		try
+		{
+			show2();
+		}
+		catch( Exception e)
+		{
+			System.out.println("Show2 Exception");
+		}
+		System.out.println("Show - 1.2");
+	}
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		Q19_Exception_Handling_Dropdown_Exception q19 = new Q19_Exception_Handling_Dropdown_Exception();
+		q19.show1();
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+Show2 Exception
+Show - 1.2
+Vishal Soner - 2
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+class A
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		System.out.println(10/0);
+		System.out.println("Show - 2.2");
+	}
+}
+
+class B extends A
+{
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		A.show2();
+		System.out.println("Show - 1.2");
+	}
+}
+
+class Q20_Exception_Handling_Dropdown_Exception
+{
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		B.show1();
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+class A
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		try
+		{
+			System.out.println(10/0);
+		}
+		catch( Exception e )
+		{
+			System.out.println("show2 Catch Block");
+		}
+		System.out.println("Show - 2.2");
+	}
+}
+
+class B extends A
+{
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		A.show2();
+		System.out.println("Show - 1.2");
+	}
+}
+
+class Q21_Exception_Handling_Dropdown_Exception
+{
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		B.show1();
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+show2 Catch Block
+Show - 2.2
+Show - 1.2
+Vishal Soner - 2
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+class A
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		System.out.println(10/0);
+		System.out.println("Show - 2.2");
+	}
+}
+
+class B extends A
+{
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		try
+		{
+			A.show2();
+		}
+		catch( Exception e )
+		{
+			System.out.println("show1 Catch Block");
+		}
+		System.out.println("Show - 1.2");
+	}
+}
+
+class Q22_Exception_Handling_Dropdown_Exception
+{
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		B.show1();
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+show1 Catch Block
+Show - 1.2
+Vishal Soner - 2
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+class A
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		System.out.println(10/0);
+		System.out.println("Show - 2.2");
+	}
+}
+
+class B extends A
+{
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		A.show2();
+		System.out.println("Show - 1.2");
+	}
+}
+
+class Q23_Exception_Handling_Dropdown_Exception
+{
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		
+		try
+		{
+			B.show1();
+		}
+		catch( Exception e )
+		{
+			System.out.println("Main Catch Block");
+		}
+		
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+Main Catch Block
+Vishal Soner - 2
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+
+class Q24_Exception_Handling_Propogation
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		System.out.println(10/0);
+		System.out.println("Show - 2.2");
+	}
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		A.show2();
+		System.out.println("Show - 1.2");
+	}
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		B.show1();
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+
+class Q25_Exception_Handling_Propogation
+{
+	static void show2()
+	{
+		System.out.println("Show - 2.1");
+		
+		PrintWriter pw = new PrintWriter("A.txt");
+		pw.print("Vishal Soner");
+		
+		
+		System.out.println("Show - 2.2");
+	}
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		A.show2();
+		System.out.println("Show - 1.2");
+	}
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		B.show1();
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input : (At a Compile Time)
+
+error: unreported exception FileNotFoundException; must be caught or declared to be thrown
+               PrintWriter pw = new PrintWriter("A.txt");
+                                ^
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+
+class Q26_Exception_Handling_Propogation
+{
+	static void show2() throws FileNotFoundException
+	{
+		System.out.println("Show - 2.1");
+		PrintWriter pw = new PrintWriter("A.txt");
+		pw.print("Vishal Soner");
+		
+		
+		System.out.println("Show - 2.2");
+	}
+	static void show1()
+	{
+		System.out.println("Show - 1.1");
+		show2();
+		System.out.println("Show - 1.2");
+	}
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		show1();
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :	(At a Run Time)
+
+error: unreported exception FileNotFoundException; must be caught or declared to be thrown
+                show2();
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+
+class Q27_Exception_Handling_Propogation
+{
+	static void show2() throws FileNotFoundException
+	{
+		System.out.println("Show - 2.1");
+		
+		PrintWriter pw = new PrintWriter("A.txt");
+		pw.print("Vishal Soner");
+		
+		
+		System.out.println("Show - 2.2");
+	}
+	
+	static void show1() throws FileNotFoundException
+	{
+		System.out.println("Show - 1.1");
+		show2();
+		System.out.println("Show - 1.2");
+	}
+	
+	public static void main(String args[])
+	{
+		System.out.println("Vishal Soner - 1");
+		show1();
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :	(At a Compile Time)
+error: unreported exception FileNotFoundException; must be caught or declared to be thrown
+                show1();
+                     ^
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+import java.io.*;
+
+
+class Q29_Exception_Handling_Propogation
+{
+	static void show2() throws FileNotFoundException
+	{
+		System.out.println("Show - 2.1");
+		try
+		{
+			PrintWriter pw = new PrintWriter("A.txt");
+			pw.print("Vishal Soner");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Catch Block");
+		}
+		
+		System.out.println("Show - 2.2");
+	}
+	
+	static void show1() throws FileNotFoundException
+	{
+		System.out.println("Show - 1.1");
+		show2();
+		System.out.println("Show - 1.2");
+	}
+	
+	public static void main(String args[]) throws FileNotFoundException
+	{
+		System.out.println("Vishal Soner - 1");
+		show1();
+		System.out.println("Vishal Soner - 2");
+	}
+}
+
+/*
+input :	
+
+Vishal Soner - 1
+Show - 1.1
+Show - 2.1
+Show - 2.2
+Show - 1.2
+Vishal Soner - 2
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+class Q30_Exception_Handling_Catch_Multiple_Parameter
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+		catch( ArithmeticException | NumberFormatException e)
+		{
+			System.out.println("Exception Occur");
+		}
+	}
+}
+
+/*
+
+Case - 1
+input  : 100 20
+Output : 0
+
+
+Case - 2
+input  : 100 0
+Output : Exception Occur
+
+
+Case - 3
+input  : 100 abcd
+Output : Exception Occur
+
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+class Q31_Exception_Handling_Catch_Multiple_Parameter
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+		catch( ArithmeticException e)
+		{
+			System.out.println("ArithmeticException Exception Occur - 1");
+		}
+		
+		catch( ArithmeticException e)
+		{
+			System.out.println("ArithmeticException Exception Occur - 2");
+		}
+	}
+}
+
+/*
+
+ error: exception ArithmeticException has already been caught
+                catch( ArithmeticException e)
+                ^
+
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+class Q32_Exception_Handling_Catch_Multiple_Parameter
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+		catch( ArithmeticException e)
+		{
+			System.out.println("ArithmeticException Exception Occur - 1");
+		}
+		
+		catch( Exception e)
+		{
+			System.out.println("Exception Occur");
+		}
+	}
+}
+
+/*
+
+Case - 1
+Input  :  100 20
+Output :  5
+
+
+Case - 2
+Input  :  100 abcd
+Output :  Exception Occur
+
+Case - 3
+Input  :  100 0
+Output :  Exception Occur
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+class Q33_Exception_Handling_Catch_Multiple_Parameter
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+		catch( Exception e)
+		{
+			System.out.println("Exception Occur");
+		}
+		
+		catch( ArithmeticException e)
+		{
+			System.out.println("ArithmeticException Exception Occur - 1");
+		}
+		
+	}
+}
+
+/*
+
+error: exception ArithmeticException has already been caught
+                catch( ArithmeticException e)
+                ^
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+class Q34_Exception_Handling_Catch_Multiple_Parameter
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+
+		catch( ArithmeticException | Exception e)
+		{
+			System.out.println("ArithmeticException Exception Occur - 1");
+		}
+		
+	}
+}
+
+/*
+
+error: Alternatives in a multi-catch statement cannot be related by subclassing
+                catch( ArithmeticException | Exception e)
+											 ^
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class Q35_Exception_Handling_toString
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+
+		catch( Exception e)
+		{
+			System.out.println(e.toString() );
+		}
+		
+	}
+}
+
+/*
+
+Case - 1
+Input  :  100 20
+Output :  5
+
+
+Case - 2
+Input  :  100 abcd
+Output :  java.lang.NumberFormatException: For input string: "adcd"
+
+Case - 3
+Input  :  100 0
+Output :  java.lang.ArithmeticException: / by zero
+
+Case - 4
+Input  :  100
+Output :  java.lang.ArrayIndexOutOfBoundsException: 0
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+class Q36_Exception_Handling_getMessage
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+
+		catch( Exception e)
+		{
+			System.out.println(e.getMessage() );
+		}
+		
+	}
+}
+
+/*
+
+Case - 1
+Input  :  100 20
+Output :  5
+
+
+Case - 2
+Input  :  100 abcd
+Output :  For input string: "abcd"
+
+Case - 3
+Input  :  100 0
+Output :  / by zero
+
+Case - 4
+Input  :  100
+Output :  1
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+class Q37_Exception_Handling_printStackTrace
+{
+	public static void main(String args[])
+	{
+		try
+		{
+			int x = Integer.parseInt( args[0] );
+			int y = Integer.parseInt( args[1] );
+			
+			
+			System.out.println("X/Y : " + (x/y));
+		}
+
+		catch( Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+/*
+
+Case - 1
+Input  :  100 20
+Output :  5
+
+
+Case - 2
+Input  :  100 abcd
+Output :  
+java.lang.NumberFormatException: For input string: "abcd"
+        at java.lang.NumberFormatException.forInputString(Unknown Source)
+        at java.lang.Integer.parseInt(Unknown Source)
+        at java.lang.Integer.parseInt(Unknown Source)
+        at Q37_Exception_Handling_printStackTrace.main(Q37_Exception_Handling_printStackTrace.java:8)
+
+
+
+
+Case - 3
+Input  :  100 0
+Output :  
+java.lang.ArithmeticException: / by zero
+        at Q37_Exception_Handling_printStackTrace.main(Q37_Exception_Handling_printStackTrace.java:11)
+
+Case - 4
+Input  :  100
+Output :  java.lang.ArrayIndexOutOfBoundsException: 1
+
+
+
+---------------------------------------------------------------------------------------------
+*/
+
+
+
+
