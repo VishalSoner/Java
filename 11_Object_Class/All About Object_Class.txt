@@ -1,0 +1,2272 @@
+Object Class have total 12 method
+
+public 	      String 	   toString()
+public        int 		   hashCode()
+public        boolean 	   equals( Obj )
+
+
+public        final 	   getclass()
+public        final 	   void  	 notify()
+public        final 	   void  	 notifyAll()
+public        final 	   void  	 wait()
+public        final 	   void  	 wait(long)
+public        final 	   void  	 wait(long, int)
+
+protected     void 		   finalize()
+protected     Object 	   clone()
+
+private 	  Static 		registerNatives().
+
+
+
+
+
+/* 
+
+	When we print Object that time toString method is called.	( Zero parameter ).
+
+*/
+
+class Employee
+{
+	int id;
+	String name;
+	
+}
+
+class Q01_Object_Class_toString
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee();
+		
+		System.out.println(e1);
+		System.out.println(e1.toString() );
+	}
+}
+
+
+
+/*
+
+Employee@15db9742
+Employee@15db9742
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+/* 
+
+	When we print Object that time toString method is called.	( Zero parameter ).
+
+*/
+
+class Employee
+{
+	int id;
+	String name;
+	
+	public String toString()
+	{
+		return "Ram";
+	}
+}
+
+class Q02_Object_Class_toString
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee();
+		
+		System.out.println(e1);
+		System.out.println(e1.toString() );
+	}
+}
+
+
+
+/*
+
+Ram
+Ram
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	public String toString()
+	{
+		return "Ram";
+	}
+}
+
+class Q03_Object_Class_getClass
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee();
+		
+		System.out.println(e1.getClass() );
+	}
+}
+
+
+
+/*
+
+class Employee
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	public String toString()
+	{
+		return "Ram";
+	}
+}
+
+class Q04_Object_Class_getName
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee();
+		
+		System.out.println(e1.getClass() );
+		System.out.println(e1.getClass().getName() );
+	}
+}
+
+
+/*
+
+class Employee
+Employee
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public String toString()
+	{
+		return "Id : " + id + ", Name : " + name ;
+	}
+}
+
+class Q05_Object_Class_toString
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "A");
+		Employee e2 = new Employee(102, "B");
+		
+		System.out.println(e1);
+		System.out.println(e2);
+		
+		System.out.println(e1.toString() );
+		System.out.println(e2.toString() );
+	}
+}
+
+
+/*
+
+Id : 101, Name : A
+Id : 102, Name : B
+
+Id : 101, Name : A
+Id : 102, Name : B
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	
+}
+
+class Q06_Object_Class_hashCode
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee();
+		
+		System.out.println(e1);
+		System.out.println(e1.hashCode() );
+		System.out.println( Integer.toHexString( e1.hashCode() ) );
+		
+	}
+}
+
+
+/*
+
+Employee@15db9742
+366712642
+15db9742
+
+
+hashCode return  :  Decimal Number and 
+toString return  :  Class_Name@Hexa_Decimal_Number
+
+toHexString return :  Decimal to Hexa_Decimal_Number
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public String toString()
+	{
+		return "" + getClass().getName() ;
+	}
+}
+
+class Q07_Object_Class_toString
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "A");
+		
+		System.out.println(e1);
+	}
+}
+
+
+/*
+
+		
+Employee
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public String toString()
+	{
+		return "" + getClass().getName() + "@" + hashCode();
+	}
+	
+	public int hashCode()
+	{
+		return  id;
+	}
+}
+
+class Q08_Object_Class_toString
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "A");
+		
+		System.out.println(e1);
+	}
+}
+
+
+/*
+
+		
+Employee@101
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public String toString()
+	{
+		return "" + getClass().getName() + "@" + Integer. toHexString( hashCode() );
+	}
+	
+	public int hashCode()
+	{
+		return  id;
+	}
+}
+
+class Q09_Object_Class_toString
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "A");
+		
+		System.out.println(e1);
+	}
+}
+
+
+/*
+
+		
+Employee@65
+
+
+
+Employee   @  	65
+class_Name @ Hexa_Decomal_Number
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q11_Boolean_Constructor
+{
+	public static void main(String args[])
+	{
+		Boolean b1 = new Boolean("ram"); 
+		Boolean b2 = new Boolean("Sita"); 
+		
+		System.out.println(b1);
+		System.out.println(b2);
+	}
+}
+
+
+/*
+
+false
+false
+
+
+
+Jab ham Boolean class ka Object create  karet tiem constructor me jo v pass karenege
+true ke alawa baha ushe false hi lega
+
+And Boolean class ne toString class ko esha tarah overRide kar ke rakha he ki jo pass karenege bahi return karenga
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q12_Boolean_Constructor
+{
+	public static void main(String args[])
+	{
+		Boolean b1 = new Boolean("ram"); 
+		Boolean b2 = new Boolean("Sita"); 
+		
+		System.out.println(b1.equals(b2) );
+	}
+}
+
+
+/*
+
+true
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q13_Boolean_Constructor
+{
+	public static void main(String args[])
+	{
+		Boolean b1 = new Boolean("true"); 
+		Boolean b2 = new Boolean("True"); 
+		Boolean b3 = new Boolean("TRUE"); 
+		
+		System.out.println(b1);
+		System.out.println(b2);
+		System.out.println(b3);
+	}
+}
+
+
+/*
+
+true
+true
+true
+
+
+Ham COnstructor me value kese v pass Kare ushe bo true hi lega.
+--------------------------------------------------------------
+*/
+
+
+
+
+
+/*
+1. Super class ka reference variable sub-class ke object ko store kar sakta he.
+
+2. Compile time par hamesha reference variable ke corresponding check hota he, 
+   Runtime par Object ke corresponding working hogi.
+
+*/
+class A
+{}
+
+class B extends A
+{}
+
+class C extends A
+{}
+
+class Q14_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a1 = new A();			//Compile + Run
+		A a2 = new B();			//Compile + Run
+		A a3 = new C();			//Compile + Run
+		System.out.println("Done");
+	}
+}
+
+
+/*
+
+Done
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+class A
+{}
+
+class B extends A
+{}
+
+class C extends A
+{}
+
+class Q15_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		B b = new A();
+		System.out.println("Done");
+	}
+}
+
+
+/*
+
+	B b = new A();
+error: incompatible types: A cannot be converted to B
+                B b = new A();
+                      ^
+
+
+
+if Case : 
+	C c = new A();
+error: incompatible types: A cannot be converted to C
+                C c = new A();
+                      ^
+
+
+if Case :
+	B b = new C();
+error: incompatible types: C cannot be converted to B
+                B b = new C();
+                      ^
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{}
+
+class B extends A
+{}
+
+class C extends A
+{}
+
+class Q16_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a = new B();
+		B b = a;
+		System.out.println("Done");
+	}
+}
+
+
+/*
+error: incompatible types: A cannot be converted to B
+                B b = a;
+                      ^
+
+
+
+if Case :
+	A a = new B();
+	B b = (B)a;			//COmpile + Run 	: 	work
+Done
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{}
+
+class B extends A
+{}
+
+class C extends A
+{}
+
+class Q17_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a = new B();
+		B b = (B)a;
+		System.out.println("Done");
+	}
+}
+
+
+/*
+
+Exception in thread "main" java.lang.ClassCastException: C cannot be cast to B
+
+
+
+IF  case - 1
+A a = new A();
+B b = (B)a;
+Exception in thread "main" java.lang.ClassCastException: A cannot be cast to B
+
+
+
+IF  case - 2
+A a = new C();
+B b = (B)a;
+Exception in thread "main" java.lang.ClassCastException: A cannot be cast to B
+
+
+
+IF  case - 3
+A a = new B();
+B b = (B)a;
+Done
+--------------------------------------------------------------
+*/
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+	void show()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class Q18_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+		
+		B b = new B();
+		b.show();
+	}
+}
+
+
+/*
+
+
+Class A
+Class B
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+	void show()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class Q19_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a = new B();
+		a.show();
+	}
+}
+
+
+/*
+
+
+Class B
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class A
+{
+}
+
+class B extends A
+{
+	void show()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class Q20_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a = new B();
+		a.show();
+	}
+}
+
+
+/*
+
+
+error: cannot find symbol
+                a.show();
+                 ^
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+}
+
+class Q21_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a = new B();
+		a.show();
+	}
+}
+
+
+/*
+
+Class A
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+}
+
+class B extends A
+{
+}
+
+class Q22_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		A a = new B();
+		a.show();
+	}
+}
+
+
+/*
+
+ error: cannot find symbol
+                a.show();
+                 ^
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+	void show()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class C extends B
+{
+	void show()
+	{
+		System.out.println("Class C");
+	}
+}
+
+
+class Q23_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		// 01
+		B b = new C();
+		b.show();
+		
+		// 02
+		A a = new C();
+		a.show();
+	}
+}
+
+
+/*
+// 01
+Class C
+
+
+// 02
+Class C
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+	void show()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class C extends B
+{
+}
+
+
+class Q24_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		// 01
+		B b = new C();
+		b.show();
+		
+		// 02
+		A a = new C();
+		a.show();
+	}
+}
+
+
+/*
+// 01
+Class B
+
+
+// 02
+Class B
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+}
+
+class C extends B
+{
+}
+
+
+class Q25_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		// 01
+		B b = new C();
+		b.show();
+		
+		// 02
+		A a = new C();
+		a.show();
+	}
+}
+
+
+/*
+// 01
+Class A
+
+
+// 02
+Class A
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+}
+
+class B extends A
+{
+}
+
+class C extends B
+{
+}
+
+
+class Q26_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		// 01
+		B b = new C();
+		b.show();
+		
+		// 02
+		A a = new C();
+		a.show();
+	}
+}
+
+
+/*
+// 01
+error: cannot find symbol
+                b.show();
+                 ^
+  symbol:   method show()
+  
+  
+  
+// 02
+error: cannot find symbol
+                a.show();
+                 ^
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+}
+
+class B extends A
+{
+}
+
+class C extends B
+{
+	void show()
+	{
+		System.out.println("Class C");
+	}
+}
+
+
+class Q27_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		// 01
+		B b = new C();
+		b.show();
+		
+		// 02
+		A a = new C();
+		a.show();
+	}
+}
+
+
+/*
+// 01
+error: cannot find symbol
+                b.show();
+                 ^
+  symbol:   method show()
+  
+  
+  
+// 02
+error: cannot find symbol
+                a.show();
+                 ^
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+}
+
+class B extends A
+{
+	void show()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class C extends B
+{
+	void show()
+	{
+		System.out.println("Class C");
+	}
+}
+
+
+class Q28_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		// 01
+		B b = new C();
+		b.show();
+		
+		// 02
+		A a = new C();
+		a.show();
+	}
+}
+
+
+/*
+
+
+// 02
+error: cannot find symbol
+                a.show();
+                 ^
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+}
+
+class C extends B
+{
+	void show()
+	{
+		System.out.println("Class C");
+	}
+}
+
+
+class Q29_Object_Class_Object_Referance
+{
+	public static void main(String args[])
+	{
+		// 01
+		B b = new C();
+		b.show();
+		
+		// 02
+		A a = new C();
+		a.show();
+	}
+}
+
+
+/*
+
+
+// 01
+Class C
+
+// 02
+Class C
+--------------------------------------------------------------
+*/
+
+
+
+
+
+instanceof keyword ka use parent - child relation me hi kar sakte he.
+
+
+class A 
+{}
+
+class B extends A 
+{}
+
+class C extends A 
+{}
+
+
+
+class Q30_Object_Class_instanceof
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		B b = new B();
+		C c = new C();
+		
+		// 01
+		// System.out.println(a instanceof A);
+		// System.out.println(b instanceof A);
+		// System.out.println(c instanceof A);	
+		
+		// 02
+		// System.out.println(a instanceof B);
+		// System.out.println(b instanceof B);
+		// System.out.println(c instanceof B);	
+		
+		// 03
+		System.out.println(a instanceof C);
+		// System.out.println(b instanceof C);
+		System.out.println(c instanceof C);
+	}
+}
+
+
+/*
+// 01
+true
+true
+true
+
+
+// 02
+false
+true
+error: incompatible types: C cannot be converted to B
+    System.out.println(c instanceof B);
+                       ^
+
+
+// 03
+false
+error: incompatible types: B cannot be converted to C
+	System.out.println(b instanceof C);
+                       ^
+true
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+/* instanceof keyword ka use parent - child relation me hi kar sakte he. */
+
+class A 
+{}
+
+class B extends A 
+{}
+
+class C extends A 
+{}
+
+
+
+class Q31_Object_Class_instanceof
+{
+	public static void main(String args[])
+	{
+		Object o1 = new Object();
+		String s1 = new String();
+		StringBuffer b1 = new StringBuffer();
+		
+		// 01
+		System.out.println(o1 instanceof Object);
+		System.out.println(s1 instanceof Object);
+		System.out.println(b1 instanceof Object);
+		
+		
+		// 02
+		System.out.println(o1 instanceof String);
+		System.out.println(s1 instanceof String);
+		// System.out.println(b1 instanceof String);
+
+
+		// 03
+		System.out.println(o1 instanceof StringBuffer);
+		// System.out.println(s1 instanceof StringBuffer);
+		System.out.println(b1 instanceof StringBuffer);
+	}
+}
+
+
+/*
+// 01
+true
+true
+true
+
+
+// 02
+false
+true
+error: incompatible types: StringBuffer cannot be converted to String
+	System.out.println(b1 instanceof String);
+					   ^
+
+
+// 03
+false
+ error: incompatible types: String cannot be converted to StringBuffer
+		System.out.println(s1 instanceof StringBuffer);
+                           ^
+true
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A 
+{}
+
+class B extends A 
+{}
+
+class C extends A 
+{}
+
+
+
+class Q32_Object_Class_instanceof
+{
+	public static void main(String args[])
+	{
+		Object o1 = new Object();
+		String s1 = new String();
+		StringBuffer b1 = new StringBuffer();
+		
+		// 01
+		System.out.println(o1 instanceof Object);
+		System.out.println(s1 instanceof Object);
+		System.out.println(b1 instanceof Object);
+		
+		
+		// 02
+		System.out.println(o1 instanceof Object);
+		System.out.println(s1 instanceof Object);
+		System.out.println(b1 instanceof Object);
+
+
+		// 03
+		System.out.println(o1 instanceof Object);
+		System.out.println(s1 instanceof Object);
+		System.out.println(b1 instanceof Object);
+	}
+}
+
+
+/*
+// 01
+true
+true
+true
+
+
+// 02
+true
+true
+true
+
+
+// 03
+true
+true
+true
+
+
+
+
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q33_Object_Class_instanceof
+{
+	public static void main(String args[])
+	{
+		System.out.println(null instanceof Object);
+		System.out.println(null instanceof Object);
+		System.out.println(null instanceof Object);
+	}
+}
+
+
+/*
+// 01
+
+false
+false
+false
+
+
+null ke case me hamesha , false hi aayega.
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q34_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Double a = 10.8, b = 10.8;
+		
+		Double x = 100.8;
+		Double y = 100.8;
+		
+		System.out.println( a == b);
+		System.out.println( x == y);
+		
+		System.out.println( a.equals(b) );
+		System.out.println( x.equals(y) );
+		
+	}
+}
+
+
+/*
+
+false
+false
+true
+true
+
+String class ki .equals() method content compare ka kam karti he.
+( == ) operator referance ko compare karta he.
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q35_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		String s1 = new String("Ram");
+		String s2 = new String("Ram Ji");
+		String s3 = new String("Ram");
+		
+		System.out.println( s1 == s2 );
+		System.out.println( s1 == s3 );
+		System.out.println( s2 == s3 );
+		
+		System.out.println( s1.equals(s2) );
+		System.out.println( s2.equals(s3) );
+		System.out.println( s1.equals(s3) );
+		
+	}
+}
+
+
+/*
+
+false
+false
+false
+
+false
+false
+true
+
+String class ki .equals() method content compare ka kam karti he.
+( == ) operator referance ko compare karta he.
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q36_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		StringBuffer s1 = new StringBuffer("Ram");
+		StringBuffer s2 = new StringBuffer("Ram Ji");
+		StringBuffer s3 = new StringBuffer("Ram");
+		
+		System.out.println( s1 == s2 );
+		System.out.println( s1 == s3 );
+		System.out.println( s2 == s3 );
+		
+		System.out.println( s1.equals(s2) );
+		System.out.println( s2.equals(s3) );
+		System.out.println( s1.equals(s3) );
+		
+	}
+}
+
+
+/*
+
+false
+false
+false
+
+false
+false
+false
+
+
+
+StringBuffer class ki .equals() method nai he that's by 
+Object class li equals or ( == ) operator referance ko compare karta he.
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public String toString()
+	{
+		return "Id : " + id + ", Name : " + name;
+	}
+	
+}
+
+class Q37_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		
+		System.out.println( e1 );
+		System.out.println( e2 );
+		System.out.println( e3 );
+		
+		System.out.println( e1 == e2 );
+		System.out.println( e1 == e3 );
+		System.out.println( e2 == e3 );
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e2.equals(e3) );
+		System.out.println( e1.equals(e3) );
+	}
+}
+
+
+/*
+
+Id : 101, Name : Ram
+Id : 102, Name : Sita
+Id : 101, Name : Ram
+
+false
+false
+false
+
+false
+false
+false
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public boolean equals(Object o)
+	{
+		return true;
+	}
+}
+
+class Q38_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		
+		System.out.println( e1 == e2 );
+		System.out.println( e1 == e3 );
+		System.out.println( e2 == e3 );
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e2.equals(e3) );
+		System.out.println( e1.equals(e3) );
+	}
+}
+
+
+/*
+
+false
+false
+false
+
+true
+true
+true
+
+
+Object class ki equals method referance comparion ka kam karti he.
+ham chahte he content compare ho esha purpose se equals method ko overRide karte he.
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+
+	public boolean equals(Object o)
+	{
+		System.out.println(o.id);
+		return true;
+	}
+}
+
+class Q39_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		Employee e4 = e1;
+
+
+		System.out.println( e1.equals(e2) );
+		System.out.println( e1.equals(e3) );
+		System.out.println( e1.equals(e4) );
+
+		System.out.println( e2.equals(e3) );
+		System.out.println( e2.equals(e4) );
+
+		System.out.println( e3.equals(e4) );
+	}
+}
+
+
+/*
+
+101
+true
+101
+true
+101
+true
+
+102
+true
+102
+true
+
+101
+true
+
+
+
+
+if Case :
+	public boolean equals(Object o)
+	{
+		System.out.println(o.id);
+		return true;
+	}
+	error: cannot find symbol
+        System.out.println(o.id);
+                           ^
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public boolean equals(Object o)
+	{
+		Employee e = (Employee)o;
+		
+		if(id == e.id && name.equals(e.name) )
+		{
+			return true;
+		}
+
+		return false;
+	}
+}
+
+class Q40_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		Employee e4 = e1;
+		
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e1.equals(e3) );
+		System.out.println( e1.equals(e4) );
+		
+		System.out.println( e2.equals(e3) );
+		System.out.println( e2.equals(e4) );
+		
+		System.out.println( e3.equals(e4) );
+	}
+}
+
+
+/*
+
+false
+true
+true
+
+false
+false
+
+true
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public boolean equals(Object o)
+	{
+		Employee e = (Employee)o;
+		
+		if(id == e.id && name.equals(e.name) )
+		{
+			return true;
+		}
+
+		return false;
+	}
+}
+
+class Q41_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		Employee e4 = e1;
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e1.equals(e3) );
+		System.out.println( e1.equals(e4) );
+		
+		// System.out.println( e3.equals(101) );
+		// System.out.println( e3.equals("Ram") );
+		// System.out.println( e3.equals(null) );
+	}
+}
+
+
+/*
+
+false
+true
+true
+
+// Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to Employee
+// Exception in thread "main" java.lang.ClassCastException: java.lang.String  cannot be cast to Employee
+// Exception in thread "main" java.lang.NullPointerException
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+}
+
+class Q42_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		Employee e4 = e1;
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e1.equals(e3) );
+		System.out.println( e1.equals(e4) );
+		
+		System.out.println( e1.equals(101) );
+		System.out.println( e1.equals("Ram") );
+		System.out.println( e1.equals(null) );
+	}
+}
+
+
+/*
+
+false
+false
+true
+
+false
+false
+false
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public boolean equals(Object o)
+	{
+		try
+		{
+			Employee e1 = (Employee)o;
+			if( id == e1.id && name.equals(e1.name) )
+				return true;
+			
+			else
+				return false;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
+}
+
+class Q43_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		Employee e4 = e1;
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e1.equals(e3) );
+		System.out.println( e1.equals(e4) );
+		
+		System.out.println( e3.equals(101) );
+		System.out.println( e3.equals("Ram") );
+		System.out.println( e3.equals(null) );
+	}
+}
+
+
+/*
+
+false
+true
+true
+
+false
+false
+false
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public boolean equals(Object o)
+	{
+		if( o instanceof Employee)
+		{
+			Employee e1 = (Employee)o;
+			
+			if( id == e1.id && name.equals(e1.name) )
+				return true;
+			
+			else
+				return false;
+		}
+		else
+			return false;
+	}
+}
+
+class Q44_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		Employee e4 = e1;
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e1.equals(e3) );
+		System.out.println( e1.equals(e4) );
+		
+		System.out.println( e3.equals(101) );
+		System.out.println( e3.equals("Ram") );
+		System.out.println( e3.equals(null) );
+	}
+}
+
+
+/*
+false
+true
+true
+
+false
+false
+false
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Employee
+{
+	int id;
+	String name;
+	
+	Employee(int id, String name)
+	{
+		this.id = id;
+		this.name = name;
+	}
+	
+	public boolean equals(Object o)
+	{
+		if(this == o )
+			return true;
+		if( o instanceof Employee)
+		{
+			Employee e1 = (Employee)o;
+			
+			if( id == e1.id && name.equals(e1.name) )
+				return true;
+			
+			else
+				return false;
+		}
+		else
+			return false;
+	}
+}
+
+class Q45_Object_Class_equals
+{
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee(101, "Ram");
+		Employee e2 = new Employee(102, "Sita");
+		Employee e3 = new Employee(101, "Ram");
+		Employee e4 = e1;
+		
+		System.out.println( e1.equals(e2) );
+		System.out.println( e1.equals(e3) );
+		System.out.println( e1.equals(e4) );
+		
+		System.out.println( e3.equals(101) );
+		System.out.println( e3.equals("Ram") );
+		System.out.println( e3.equals(null) );
+	}
+}
+
+
+/*
+false
+true
+true
+
+false
+false
+false
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q46_Object_Class_Operator
+{
+	public static void main(String args[])
+	{
+		String s1 = new String("Ram");
+		StringBuffer s2 = new StringBuffer("Ram");
+		
+		System.out.println(s1 == s2);
+	}
+}
+
+
+/*
+
+error: incomparable types: String and StringBuffer
+                System.out.println(s1 == s2);
+                                      ^
+
+
+(==) Operator Parent child relation me hi work karte he.
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q47_Object_Class_Operator
+{
+	public static void main(String args[])
+	{
+		Object s1 = new String("Ram");
+		Object s2 = new StringBuffer("Ram");
+		
+		System.out.println(s1 == s2);
+	}
+}
+
+
+/*
+
+false
+
+
+(==) Operator Parent child relation me hi work karte he.
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q48_Object_Class_Operator
+{
+	public static void main(String args[])
+	{
+		Object s1 = new String("Ram");
+		Object s2 = null;
+		
+		Object s3 = s1;
+		
+		System.out.println(s1 == s2);
+		
+		System.out.println(s1 == s3);
+	}
+}
+
+
+/*
+
+false
+
+true
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
+class Q49_Object_Class_Operator
+{
+	public static void main(String args[])
+	{
+		Object s1 = new String("Ram");
+		Object s2 = null;
+		
+		System.out.println(s1 == s2);
+	}
+}
+
+
+/*
+
+false
+
+
+--------------------------------------------------------------
+*/
+
+
+
+
+
+
