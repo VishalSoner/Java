@@ -1,0 +1,614 @@
+abstraction class A
+{
+	
+}
+
+class Q01_Abstraction
+{
+	public static void main(String args[])
+	{
+	}
+}
+
+/* 
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+abstract class A
+{
+	void show()
+	{
+		System.out.println("Abstract class");
+	}
+}
+
+class Q02_Abstraction
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+	}
+}
+
+/* 
+
+error: A is abstract; cannot be instantiated
+	A a = new A();
+		  ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+
+abstract class A
+{
+	void show()
+	{
+		System.out.println("Abstract class");
+	}
+}
+
+class B extends A
+{
+	
+}
+
+class Q03_Abstraction
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show();
+	}
+}
+
+/* 
+
+Abstract class
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+
+class A
+{
+	abstract void show();
+}
+
+class Q04_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+	}
+}
+
+/* 
+
+error: A is not abstract and does not override abstract method show() in A
+class A
+^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+
+abstract class A
+{
+	void show();
+}
+
+class Q05_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+ error: missing method body, or declare abstract
+        void show();
+             ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show();
+}
+
+class Q06_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Done
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show()
+	{
+		System.out.println("Abstract Class");
+	}
+}
+
+class Q07_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Q07_Abstraction_Method.java:3: error: abstract methods cannot have a body
+        abstract void show()
+                      ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+
+
+
+
+
+abstract class A
+{
+	abstract void show();
+}
+
+class B extends A
+{
+	
+}
+
+class Q08_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+ B is not abstract and does not override abstract method show() in A
+class B extends  A
+^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show();
+}
+
+abstract class B extends A
+{
+}
+
+class Q09_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Done
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show();
+}
+
+abstract class B extends A
+{
+}
+
+class Q10_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+ error: B is abstract; cannot be instantiated
+                B b = new B();
+                      ^
+					  
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show();
+}
+
+class B extends A
+{
+	void show()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class Q11_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Class B
+Done
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show1();
+	abstract void show2();
+}
+
+class B extends A
+{
+	void show1()
+	{
+		System.out.println("Class B");
+	}
+}
+
+class Q12_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show1();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+error: B is not abstract and does not override abstract method show2() in A
+class B extends A
+^
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show1();
+	abstract void show2();
+}
+
+class B extends A
+{
+	void show1()
+	{
+		System.out.println("Class B Show1");
+	}
+
+	void show2()
+	{
+		System.out.println("Class B Show2");
+	}
+}
+
+class Q13_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show1();
+		b.show2();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Class B Show1
+Class B Show2
+Done
+
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show1();
+	abstract void show2();
+}
+
+class B extends A
+{
+	void show1()
+	{
+		System.out.println("Class B Show1");
+	}
+}
+
+class C extends B
+{
+}
+
+class Q14_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show1();
+		b.show2();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+error: B is not abstract and does not override abstract method show2() in A
+class B extends A
+^
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	abstract void show1();
+	abstract void show2();
+}
+
+class B extends A
+{
+	void show1()
+	{
+		System.out.println("Class B Show1");
+	}
+}
+
+class C extends B
+{
+	void show2()
+	{
+		System.out.println("Class B Show2");
+	}
+}
+
+class Q15_Abstraction_Method
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show1();
+		b.show2();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+error: B is not abstract and does not override abstract method show2() in A
+class B extends A
+^
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+abstract class A
+{
+	static void show1()
+	{
+		System.out.println("Class A");
+	}
+}
+
+class Q16_Abstraction_Class_Static_Method
+{
+	public static void main(String args[])
+	{
+		A.show1();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Class A
+Done
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+
+
+
+
+
+abstract class Q17_Abstraction_Class_Main_Method
+{
+	public static void main(String args[])
+	{
+		System.out.println("Done");
+	}
+}
+
+/* 
+Done
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	A()
+	{
+		System.out.println("Abstract Class Constructor");
+	}
+}
+
+class Q18_Abstraction_Class_Constructor
+{
+	public static void main(String args[])
+	{
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Done
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	A()
+	{
+		System.out.println("Abstract Class Constructor");
+	}
+}
+
+class B extends A
+{}
+
+class Q19_Abstraction_Class_Constructor
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Abstract Class Constructor
+Done
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
+abstract class A
+{
+	A()
+	{
+		System.out.println("Abstract Class Constructor");
+	}
+	
+	void show()
+	{
+		System.out.println("Abstract Class Show Method");
+	}
+}
+
+class B extends A
+{}
+
+class Q20_Abstraction_Class_Constructor
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show();
+		System.out.println("Done");
+	}
+}
+
+/* 
+
+Abstract Class Constructor
+Abstract Class Show Method
+Done
+------------------------------------------------------------------------------------------ 
+*/
+
+
+
+
+
