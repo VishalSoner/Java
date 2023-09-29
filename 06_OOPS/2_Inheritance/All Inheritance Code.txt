@@ -1,0 +1,437 @@
+class A
+{
+	int x, y;
+	void set(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+	}
+	void sum()
+	{
+		System.out.println("Sum : " + (x+y) );
+	}
+}
+class B extends A 
+{
+	void sub()
+	{
+		System.out.println("Sub : " + (x-y) );
+	}
+}
+
+class Q01_Single_Inheritance
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.set(10, 20);
+		b.sum();
+		b.sub();
+	}	
+}
+
+--------------------------------------------------------------------------
+
+
+
+
+
+class A
+{
+	int x, y;
+	void set(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+	}
+	void sum()
+	{
+		System.out.println("Sum : " + (x+y) );
+	}
+}
+
+class B extends A 
+{
+	void sub()
+	{
+		System.out.println("Sub : " + (x-y) );
+	}
+}
+
+class C extends B
+{
+	void div()
+	{
+		System.out.println("div : " + (x/y) );
+	}
+}
+
+class Q02_Multiple_Inheritance
+{
+	public static void main(String args[])
+	{
+		C c = new C();
+		c.set(100, 20);
+		c.sum();
+		c.sub();
+		c.div();
+	}	
+}
+
+
+------------------------------------------------------------------------------------
+
+
+
+class A
+{
+	int x, y;
+	void set(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+	}
+	void sum()
+	{
+		System.out.println("Sum : " + (x+y) );
+	}
+}
+
+class B extends A 
+{
+	void sub()
+	{
+		System.out.println("Sub : " + (x-y) );
+	}
+}
+
+class C extends A
+{
+	void div()
+	{
+		System.out.println("div : " + (x/y) );
+	}
+}
+
+class Q03_Hierarchical_Inheritance
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.set(100, 10);
+		b.sum();
+		b.sub();
+		
+		System.out.println();
+		C c = new C();
+		c.set(200, 20);
+		c.sum();
+		c.div();
+	}	
+}
+
+
+
+
+Sum : 110
+Sub : 90
+
+Sum : 220
+div : 10
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+class A
+{
+	A()
+	{
+		System.out.println("Constructor A");
+	}
+}
+class B extends A
+{
+	B()
+	{
+		System.out.println("Constructor B");
+	}
+}
+class C extends B
+{
+	C()
+	{
+		System.out.println("Constructor C");
+	}
+}
+
+class Q04_Inheritance_With_Constructor
+{
+	public static void main(String args[])
+	{
+		C c = new C();
+	}	
+}
+
+
+
+
+/* 
+Constructor A
+Constructor B
+Constructor C
+*/
+// ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+class A
+{
+	A()
+	{
+		System.out.println("Constructor A");
+	}
+}
+class B extends A
+{
+	B()
+	{
+		System.out.println("Constructor B");
+	}
+}
+class C extends B
+{
+	C()
+	{
+		System.out.println("Constructor C");
+	}
+}
+
+class Q05_Inheritance_With_Constructor
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+	}	
+}
+
+
+
+
+/* 
+Constructor A
+Constructor B
+*/
+// ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+class A
+{
+	int x, y;
+	
+	A(int x, int y)
+	{
+		System.out.println("Sum : " + (x+y) );
+	}
+}
+class B extends A
+{
+	B(int x, int y)
+	{
+		System.out.println("Sub : " + (x-y) );
+	}
+}
+
+class Q06_Inheritance_With_Constructor
+{
+	public static void main(String args[])
+	{
+		B b = new B(10, 20);
+	}	
+}
+
+
+
+
+/* 
+ constructor A in class A cannot be applied to given types;
+ 
+*/
+// ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+class A
+{}
+
+class B extends A
+{
+	B(int x, int y)
+	{
+		System.out.println("Sub : " + (x-y) );
+	}
+}
+
+class Q07_Inheritance_With_Constructor
+{
+	public static void main(String args[])
+	{
+		B b = new B(100, 20);
+	}	
+}
+
+
+
+
+Sub : 80
+------------------------------------------------------------------------------------------------
+
+
+class A
+{
+	A(int x, int y)
+	{
+		System.out.println("Sub : " + (x+y) );
+	}
+}
+
+class B extends A
+{
+	B(int x, int y)
+	{
+		super(x, y);
+		System.out.println("Sub : " + (x-y) );
+	}
+}
+
+class Q08_Super_Keyword
+{
+	public static void main(String args[])
+	{
+		B b = new B(100, 20);
+	}	
+}
+
+
+
+
+/* 
+ Sub : 120
+Sub : 80
+*/
+// ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+class A
+{
+	int x = 30;
+}
+
+class B extends A
+{
+	int x = 20;
+	
+	void show()
+	{
+		int x = 10;
+		
+		System.out.println(x);
+		System.out.println(this.x);
+		System.out.println(super.x);
+		
+	}
+}
+
+class Q09_This_Keyword
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show();
+	}	
+}
+
+/* 
+10
+20
+30
+
+------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+class A
+{
+	A(int x, int y)
+	{
+		System.out.println( "Sum : " + (x+y) );
+	}
+}
+
+class B extends A
+{
+	B(int x, int y)
+	{
+		super(x, y);
+		System.out.println( "Sub : " + (x-y) );
+	}
+}
+
+class Q10_Constructor_Chining
+{
+	public static void main(String args[])
+	{
+		B b = new B(100, 20);
+	}	
+}
+
+
+
+
+/* 
+Sum : 120
+Sub : 80
+*/
+// ------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
