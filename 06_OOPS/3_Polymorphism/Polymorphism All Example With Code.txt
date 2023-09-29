@@ -1,0 +1,481 @@
+class A
+{
+	void show()
+	{
+		System.out.println("Default Parameter");
+	}
+
+	void show(int x)
+	{
+		System.out.println("One Parameter");
+	}
+
+	void show(int x, int y)
+	{
+		System.out.println("Two Parameter");
+	}
+}
+class Q01_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+		a.show(10);
+		a.show(10, 20);
+	}
+}
+
+/* 
+Output :- 
+Default Parameter
+One Parameter
+Two Parameter
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Default Parameter");
+	}
+
+	void show()
+	{
+		System.out.println("Default Parameter");
+	}
+}
+class Q02_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/* 
+Output :- 
+
+error: method show() is already defined in class A
+	   void show()
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show()
+	{
+		System.out.println("Default Parameter");
+	}
+
+	int show()
+	{
+		System.out.println("Default Parameter");
+		return 10;
+	}
+}
+class Q03_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/* 
+Output :- 
+
+error: method show() is already defined in class A
+        int show()
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show(byte x, byte y)
+	{
+		System.out.println("Byte.");
+	}
+	
+	void show(short x, short y)
+	{
+		System.out.println("Short.");
+	}
+	
+	void show(int x, int y)
+	{
+		System.out.println("Int.");
+	}
+	
+	void show(long x, long y)
+	{
+		System.out.println("Long.");
+	}
+}
+class Q04_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		byte b1 = 10, b2 = 20;
+		short s1 = 100, s2 = 200;
+		int i1 = 1000, i2 = 2000;
+		long l1 = 10000, l2 = 20000;
+		
+		a.show(b1, b2);
+		a.show(s1, s2);
+		a.show(i1, i2);
+		a.show(l1, l2);
+		System.out.println("");
+		
+		a.show(1, 2);
+		a.show(10, 20);
+		a.show(100, 200);
+		a.show(1000, 2000);
+		a.show(10000, 20000);
+	}
+}
+
+/* 
+Output :- 
+
+Byte.
+Short.
+Int.
+Long.
+
+Int.
+Int.
+Int.
+Int.
+
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show(byte x, byte y)
+	{
+		System.out.println("Byte.");
+	}
+	
+	void show(short x, short y)
+	{
+		System.out.println("Short.");
+	}
+	
+	void show(long x, long y)
+	{
+		System.out.println("Long.");
+	}
+}
+class Q05_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		byte b1 = 10, b2 = 20;
+		short s1 = 100, s2 = 200;
+		int i1 = 1000, i2 = 2000;
+		long l1 = 10000, l2 = 20000;
+		
+		a.show(b1, b2);
+		a.show(s1, s2);
+		a.show(i1, i2);
+		a.show(l1, l2);
+		System.out.println("");
+		
+		a.show(1, 2);
+		a.show(10, 20);
+		a.show(100, 200);
+		a.show(1000, 2000);
+		a.show(10000, 20000);
+	}
+}
+
+/* 
+Output :- 
+
+Byte.
+Short.
+Long.
+Long.
+
+Long.
+Long.
+Long.
+Long.
+Long.
+
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show(byte x, byte y)
+	{
+		System.out.println("Byte.");
+	}
+	
+	void show(short x, short y)
+	{
+		System.out.println("Short.");
+	}
+
+}
+class Q06_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		byte b1 = 10, b2 = 20;
+		short s1 = 100, s2 = 200;
+		int i1 = 1000, i2 = 2000;
+		long l1 = 10000, l2 = 20000;
+		
+		a.show(b1, b2);
+		a.show(s1, s2);
+		a.show(i1, i2);
+		a.show(l1, l2);
+		System.out.println("");
+		
+	}
+}
+
+/* 
+Output :- 
+
+no suitable method found for show(int,int)
+    a.show(i1, i2);
+     ^
+error: no suitable method found for show(long,long)
+	a.show(l1, l2);
+     ^
+
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show(byte x, byte y)
+	{
+		System.out.println("Byte.");
+	}
+	
+	void show(short x, short y)
+	{
+		System.out.println("Short.");
+	}
+
+}
+class Q07_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show(10, 20);
+	}
+}
+
+/* 
+Output :- 
+
+no suitable method found for show(int,int)
+    a.show(10, 20);
+      ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show(int x, double y)
+	{
+		System.out.println("Int : Double");
+	}
+	
+	void show(double x, int y)
+	{
+		System.out.println("Double: Int");
+	}
+
+}
+class Q08_Polymorphism_Overloading
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show(10, 20.20);
+		a.show(10.10, 20);
+		
+		a.show(10, 20);
+		a.show(10.10, 20.20);
+	}
+}
+
+/* 
+Output :- 
+
+Int : Double
+Double: Int
+
+error: reference to show is ambiguous
+       a.show(10, 20);
+         ^
+error: no suitable method found for show(double,double)
+        a.show(10.10, 20.20);
+          ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show(int x, int y)
+	{
+		System.out.println("Class A");
+	}
+}
+
+class B extends A
+{
+	void show(int x, int y)
+	{
+		System.out.println("Class B");
+	}
+}
+class Q09_Polymorphism__OverRiding
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		
+		b.show(10, 20);
+	}
+}
+
+/* 
+Output :- 
+
+Class B
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+}
+
+class B extends A
+{
+	void show(int x, int y)
+	{
+		System.out.println("Class B");
+	}
+}
+class Q10_Polymorphism__OverRiding
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		
+		b.show(10, 20);
+	}
+}
+
+/* 
+Output :- 
+
+Class B
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+}
+
+class B extends A
+{
+}
+class Q11_Polymorphism_OverRiding
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		
+		b.show(10, 20);
+	}
+}
+
+/* 
+Output :- 
+
+Class A
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{}
+
+class B extends A
+{}
+
+class Q12_Polymorphism__OverRiding
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		
+		b.show(10, 20);
+	}
+}
+
+/* 
+Output :- 
+
+error: cannot find symbol
+       b.show(10, 20);
+	    ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
