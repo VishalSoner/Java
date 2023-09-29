@@ -1,0 +1,244 @@
+class A
+{
+	int x = 10;
+	void show()
+	{
+		System.out.println("Show Method");
+	}
+	
+	void show1()
+	{
+		System.out.println("Show1 X : " + x);
+	}	
+}
+class Q01_OOPS
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		
+		System.out.println("X : " + a.x);
+		a.show();
+		a.show1();
+	}
+}
+
+/* 
+Output :- 
+
+X : 10
+Show Method
+Show1 X : 10
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	void set(int a, int b)
+	{
+		x = a;
+		y = b;
+	}
+	
+	void show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+	}	
+}
+
+class Q02_OOPS
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+		a.set(10, 20);
+		a.show();
+		
+	}
+}
+
+/* 
+Output :- 
+
+X : 0
+Y : 0
+X : 10
+Y : 20
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	void set(int x, int y)
+	{
+		x = x;
+		y = y;
+	}
+	
+	void show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+	}	
+}
+
+class Q03_OOPS
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+		a.set(10, 20);
+		a.show();
+		
+	}
+}
+
+/* 
+Output :- 
+
+X : 0
+Y : 0
+X : 0
+Y : 0
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	void set(int a, int b)
+	{
+		int x, y;
+		x = a;
+		y = b;
+	}
+	
+	void show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+	}	
+}
+
+class Q04_OOPS
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+		a.set(10, 20);
+		a.show();
+		
+	}
+}
+
+/* 
+Output :- 
+
+X : 0
+Y : 0
+X : 0
+Y : 0
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	
+	void show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+		x = 1;
+		y = 2;
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+	}	
+}
+
+class Q05_OOPS
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+		a.show();
+		
+	}
+}
+
+/* 
+Output :- 
+
+X : 0
+Y : 0
+X : 1
+Y : 2
+
+X : 1
+Y : 2
+X : 1
+Y : 2
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	String s1;
+	A a;
+	
+	void show()
+	{
+		System.out.println(s1);
+		System.out.println(a);
+	}	
+}
+
+class Q06_OOPS
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+		
+	}
+}
+
+/* 
+Output :- 
+
+null
+null
+
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
