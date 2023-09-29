@@ -1,0 +1,1105 @@
+class Q01_File_Class
+{
+	public static void main( String args[])
+	{
+		File f = new File("D:\2_All_Code\02_Input_Output_File_Handling(Stream)");
+
+		System.out.println();
+	}
+}
+
+/*
+
+ error: cannot find symbol
+                File f = new File("D:\2_All_Code\02_Input_Output_File_Handling(Stream)");
+                ^
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q02_File_Class_length
+{
+	public static void main( String args[])
+	{
+		File f = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+
+		System.out.println( f.length() );
+	}
+}
+
+/*
+
+264
+
+
+.length() return Long type(in Byte).
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q03_File_Class_exists
+{
+	public static void main( String args[])
+	{
+		File f = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+
+		System.out.println( f.exists() );
+	}
+}
+
+/*
+
+true
+
+.exists() return boolean value file exist return true otherwise false.
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q04_File_Class_isHidden
+{
+	public static void main( String args[])
+	{
+		File f = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+
+		System.out.println( f.isHidden() );
+	}
+}
+
+/*
+
+false
+
+.isHidden() return boolean value file is hidden or Not. 
+If it is hidden Return true otherwise false.
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q05_File_Class_canWrite
+{
+	public static void main( String args[])
+	{
+		File f = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+
+		System.out.println( f.canWrite() );
+	}
+}
+
+/*
+
+true
+
+.canWrite() return boolean value if we can write in file it Return true otherwise false.
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q06_File_Class_isDirectory
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		System.out.println( f1.isDirectory() );
+		
+		File f2 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)");
+		System.out.println( f2.isDirectory() );
+
+	}
+}
+
+/*
+
+true
+
+.isDirectory() return boolean value if File path is file it Return false and when file path is Folder return true.
+
+if file return false.
+if folder return true.
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q07_File_Class_lastModified
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		
+		//01
+		long time = f1.lastModified();
+		System.out.println( time );
+		
+		// 02
+		java.util.Date date = new java.util.Date( time );
+		System.out.println( date );
+		
+	}
+}
+
+/*
+// 01
+1695983179011
+
+// 02
+Fri Sep 29 15:56:19 IST 20231
+
+
+.lastModified() : return Date when over file is modified.
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q08_File_Class_list
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/");
+		
+		//01
+		String s1[] = f1.list();
+		
+		for( String s : s1)
+		{
+			System.out.println( s );
+		}
+		
+	}
+}
+
+/*
+
+Demo1.txt
+Input_Output_File_Handling(Stream).docx
+Input_Output_File_Handling(Stream).txt
+Q01_File_Class.java
+Q02_File_Class_length.java
+Q03_File_Class_exists.java
+Q04_File_Class_isHidden.java
+Q05_File_Class_canWrite.java
+Q06_File_Class_isDirectory.java
+Q07_File_Class_lastModified.java
+Q08_File_Class_list.class
+Q08_File_Class_list.java
+
+
+
+
+.list() : its return String list How many file in Your folder.
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q09_File_Class_mkdir
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+		
+		boolean b1 = f1.mkdir();
+		if( b1 )
+		{
+			System.out.println("Folder Created");
+		}
+		else 
+		{
+			System.out.println("Folder Already Exit");
+		}
+	}
+}
+
+/*
+// 01  run		true
+Folder Created
+
+
+// 02 run		false.
+Folder Already Exit
+
+
+D:/2_All_Code/02_Input_Output_File_Handling(Stream)/(Vishal Soner)
+Vishal Soner Folder  :  1st time folder create return true, 2nd time return false,
+
+
+.mkdir() : its return Boolean. Folder Created return true, otherwise return false.
+
+Use to Create Folder.
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q10_File_Class_delete
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+		
+		boolean b1 = f1.delete();
+		if( b1 )
+		{
+			System.out.println("Folder Deleted");
+		}
+		else 
+		{
+			System.out.println("Folder Already Deleted");
+		}
+	}
+}
+
+/*
+// 01  run		true
+Folder Deleted
+
+
+// 02 run		false.
+Folder Already Deleted
+
+
+D:/2_All_Code/02_Input_Output_File_Handling(Stream)/(Vishal Soner)
+Vishal Soner Folder  :  1st time folder Deleted return true, 2nd time return false,
+
+
+.delete() : its return Boolean. Folder Deleted return true, otherwise return false.
+
+Use to Deleted the Folder.
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q11_File_Class_renameTo
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+		File f2 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal");
+		
+		boolean b1 = f1.renameTo(f2);
+		if( b1 )
+		{
+			System.out.println("Folder Name Changed");
+		}
+		else 
+		{
+			System.out.println("Folder Name Already Changed");
+		}
+	}
+}
+
+/*
+// 01  run		true
+Folder Name Changed
+
+
+// 02 run		false.
+Folder Name Already Changed
+
+
+D:/2_All_Code/02_Input_Output_File_Handling(Stream)/(Vishal Soner)
+Vishal Soner Folder  :  1st time folder rename ho gya to return true, 2nd time return false,
+
+
+.renameTo() : its return Boolean. Folder Renamed return true, otherwise return false.
+
+Use to rename the Folder.
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q12_File_Class_renameTo
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/A.Vishal Soner");
+		File f2 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+		
+		boolean b1 = f1.renameTo(f2);
+		if( b1 )
+		{
+			System.out.println("Folder Name Changed");
+		}
+		else 
+		{
+			System.out.println("Folder Name Already Changed");
+		}
+	}
+}
+
+/*
+// 01  run		true
+Folder Name Changed
+
+
+// 02 run		false.
+Folder Name Already Changed
+
+
+
+"D:/2_All_Code/02_Input_Output_File_Handling(Stream)/(A.Vishal Soner");
+"E:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+
+Ye Folder ka Name change kar ke Directry v cahange kar degi.( D se E me dal Dega).
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q13_File_Class_canWrite
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+		
+		boolean b1 = f1.canWrite();
+		if( b1 )
+		{
+			System.out.println("Yes ");
+		}
+		else 
+		{
+			System.out.println("No");
+		}
+	}
+}
+
+/*
+
+Yes
+
+
+.canWrite() : its return Boolean. when we can write in file/folder return true otherwise return false.
+Use to check we can write or not.
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q14_File_Class_canRead
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+		
+		boolean b1 = f1.canRead();
+		if( b1 )
+		{
+			System.out.println("Yes ");
+		}
+		else 
+		{
+			System.out.println("No");
+		}
+	}
+}
+
+/*
+
+Yes
+
+
+.canRead() : its return Boolean. when we can Read in file/folder return true,  otherwise return false.
+Use to check we can write or not.
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q15_File_Class_isFile
+{
+	public static void main( String args[])
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Vishal Soner");
+		
+		boolean b1 = f1.isFile();
+		if( b1 )
+			System.out.println("Yes ");
+		else 
+			System.out.println("No");
+
+		
+		File f2 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		boolean b2 = f2.isFile();
+		if( b2 )
+			System.out.println("Yes ");
+		else 
+			System.out.println("No");
+
+		
+	}
+}
+
+/*
+
+No
+Yes
+
+
+.isFile() : its return Boolean. To check the file/folder  if path set data is file return true,  otherwise return false.
+Use to check the file or not.
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q16_File_Class_createNewFile
+{
+	public static void main( String args[]) throws IOException
+	{
+		File f1 = new File("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		boolean b1 = f1.createNewFile();
+		if( b1 )
+			System.out.println("Yes ");
+		else 
+			System.out.println("No");
+	}
+}
+
+/*
+// 01 1st time Run
+Yes
+
+// 02 2st time Run
+No
+
+
+.createNewFile() : its return Boolean. To Create the file/folder  if path set data file not created then 
+				   Create a file return true,  if already avilable then return false.
+Use to check file is Created or not.
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+===================================================================
+===================================================================
+===================================================================
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q17_FileInputSteam_read
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileInputStream fs  =  new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		
+		
+		while( true )
+		{
+			int n = fs.read();
+			System.out.print( n + "  " );
+		}
+	}
+}
+
+/*
+
+-1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  -1  infinity
+
+
+
+
+
+
+Step - 01 :	Open the steram.
+FileInputStream fs = new FileInputStream("Path");
+
+Step - 02 :	read the data.
+fs.read();
+
+Step - 03 :	Close the steram.
+fs.close();
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q18_FileInputSteam_read
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileInputStream fs  =  new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		
+		
+		while( true )
+		{
+			int n = fs.read();
+			
+			if(-1 == n)
+				break;
+			
+			System.out.print( n + "  " );
+		}
+
+		fs.close();
+	}
+}
+
+/*
+
+86   105  115  104  97  108  32  83  111  110  101  114  32   45  32   48  49   13   10   86  105  115  104  97  108  32  83  111  110  
+101  114  32   45   32  48   50  13  10   86   105  115  104  97  108  32  83  111  110  101  114
+
+
+
+
+Step - 01 :	Open the steram.
+FileInputStream fs = new FileInputStream("Path");
+
+Step - 02 :	read the data.
+fs.read();
+
+Step - 03 :	Close the steram.
+fs.close();
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q19_FileInputSteam_read
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileInputStream fs  =  new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		
+		
+		while( true )
+		{
+			int n = fs.read();
+			
+			if(-1 == n)
+				break;
+			System.out.print( (char)n);
+		}
+			
+		fs.close();
+	}
+}
+
+/*
+
+Vishal Soner - 01
+Vishal Soner - 02
+Vishal Soner - 03
+Vishal Soner - 04
+Vishal Soner - 05
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q20_FileInputSteam_read
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileInputStream fs  =  new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		
+		byte b[] = new byte[10];
+		
+		fs.read(b);
+		
+		for( byte i : b)
+		{
+			System.out.print( i + "  " );
+		}
+
+		fs.close();
+	}
+}
+
+/*
+
+86  105  115  104  97  108  32  83  111  110
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q21_FileInputSteam_read
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileInputStream fs  =  new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		
+		byte b[] = new byte[200];
+		
+		fs.read(b);
+		
+		String s = new String(b);
+		
+		System.out.print( s );
+
+		fs.close();
+	}
+}
+
+/*
+
+Vishal Soner - 01
+Vishal Soner - 02
+Vishal Soner - 03
+Vishal Soner - 04
+Vishal Soner - 05
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q22_FileInputSteam_available
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileInputStream fs  =  new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo1.txt");
+		
+		int len = fs.available();
+		
+		byte b[] = new byte[len];
+		
+		fs.read(b);
+		
+		String s = new String(b);
+		
+		System.out.print( s );
+
+		fs.close();
+	}
+}
+
+/*
+
+Vishal Soner - 01
+Vishal Soner - 02
+Vishal Soner - 03
+Vishal Soner - 04
+Vishal Soner - 05
+
+----------------------------------------
+*/
+
+
+
+
+
+
+========================================================================================
+
+.write();			:    Add All 
+.write( byte[] );   :    Add All 
+.write( byte[] , int start, int end); Add 
+
+
+
+========================================================================================
+
+
+/*
+	For Reading  : the file must exists.
+	For Writeing : 1. if file is available then the contents you are writing will overwrite the existing data.
+				   2. if file is not available so new file created And then data will be store to new file.
+*/
+
+
+import java.io.*;
+
+class Q23_FileOutputSteam_write
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileOutputStream  fs  =  new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		fs.write(97);
+		fs.write(98);
+		fs.write(99);
+		fs.write(100);
+		fs.write(101);
+		fs.write(102);
+		fs.close();
+
+		
+		FileInputStream fi = new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		byte b[] = new byte[fi.available()];
+		fi.read(b);
+		String s = new String(b);
+		
+		System.out.println( s );
+		System.out.println( "Done" );
+		
+		fi.close();
+	}
+}
+
+/*
+
+abcd
+
+
+
+...FileOutputStream("path");
+Parameter me true nai denge to data overRide ho jayega.(All Remove new Insert).
+
+
+...FileOutputStream("path", true);
+Parameter me true denge to data store(concat) ho jayega.(Without delete any data).
+.write(data);
+
+
+
+Step - 01 :	Open the steram.
+FileOutputStream fs = new FileOutputStream("Path");
+
+Step - 02 :	Write the data.
+fs.write();
+
+Step - 03 :	Close the steram.
+fs.close();
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+/*
+	For Reading  : the file must exists.
+	For Writeing : 1. if file is available then the contents you are writing will overwrite the existing data.
+				   2. if file is not available so new file created And then data will be store to new file.
+*/
+
+
+import java.io.*;
+
+class Q24_FileOutputSteam_write
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileOutputStream  fs  =  new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt", true);
+		
+		fs.write(97);
+		fs.write(98);
+		fs.write(99);
+		fs.write(100);
+		fs.write(101);
+		fs.write(102);
+		fs.close();
+
+		
+		FileInputStream fi = new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		byte b[] = new byte[fi.available()];
+		fi.read(b);
+		String s = new String(b);
+		
+		System.out.println( s );
+		System.out.println( "Done" );
+		
+		fi.close();
+	}
+}
+
+/*
+
+// 1st Run
+abcdef
+Done
+
+// 2st Run
+abcdefabcdef
+Done
+
+// 3st Run
+abcdefabcdefabcdef
+Done
+
+// 4st Run
+abcdefabcdefabcdefabcdef
+Done
+
+// 5st Run
+abcdefabcdefabcdefabcdefabcdef
+Done
+
+-------------
+
+...FileOutputStream("path");
+Parameter me true nai denge to data overRide ho jayega.(All Remove new Insert).
+
+
+...FileOutputStream("path", true);
+Parameter me true denge to data store(concat) ho jayega.(Without delete any data).
+.write(data);
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q25_FileOutputSteam_write
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileOutputStream  fs  =  new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		String s1 = "Hello Vishal Soner, This is my Account";
+		
+		byte b1[] = s1.getBytes();
+		fs.write(b1);
+		
+		fs.close();
+
+		
+		FileInputStream fi = new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		byte b2[] = new byte[fi.available()];
+		fi.read(b2);
+		String s2 = new String(b2);
+		
+		System.out.println( s2 );
+		System.out.println( "Done" );
+		
+		fi.close();
+	}
+}
+
+/*
+
+Hello Vishal Soner, This is my Account
+Done
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q26_FileOutputSteam_write
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileOutputStream  fs  =  new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		String s1 = "Hello Vishal Soner, This is my Account";
+		
+		byte b1[] = s1.getBytes();
+		fs.write(b1, 6, 10);
+		
+		fs.close();
+
+		
+		FileInputStream fi = new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		byte b2[] = new byte[fi.available()];
+		fi.read(b2);
+		String s2 = new String(b2);
+		
+		System.out.println( s2 );
+		System.out.println( "Done" );
+		
+		fi.close();
+	}
+}
+
+/*
+
+Vishal Son
+Done
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
