@@ -1,0 +1,747 @@
+abstract class A 
+{
+	void show()
+	{
+		System.out.println("Vishal Soner - 1");
+	}
+}
+
+
+class Q01_Anonyonous_Inner_Class
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/* 
+
+error: A is abstract; cannot be instantiated
+                A a = new A();
+                      ^
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+abstract class A 
+{
+	void show()
+	{
+		System.out.println("Vishal Soner - 1");
+	}
+}
+
+
+class Q02_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A(){};
+		a.show();
+	}
+}
+
+/* 
+
+Vishal Soner - 1
+
+
+1. Super Class ka referance variable sub-class ke object ko store kar sakta he.
+
+2. Abstract class ka Object nai bana sakte he,
+3. But Abstract class ka referance create kar sakte he.
+
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+/* 
+	1. Super Class ka referance variable sub-class ke object ko store kar sakta he.
+
+	2. Abstract class ka Object nai bana sakte he,
+	3. But Abstract class ka referance create kar sakte he. 
+
+*/
+abstract class A 
+{
+	void show()
+	{
+		System.out.println("Vishal Soner - 1");
+	}
+}
+
+class B extends A
+{}
+
+
+class Q03_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new B();
+		a.show();
+	}
+}
+
+/* 
+
+Vishal Soner - 1
+
+
+1. We create Class B.
+2. Class B extends A (inherit).
+3. Create Object Class B.
+4. B Class ke Object ko Super Class A ka referance variable a hold kar raha he.
+
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{}
+
+class Q04_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A(){};
+		System.out.println("Main Method");
+		
+	}
+}
+
+/* 
+
+Main Method
+
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show();
+}
+
+class Q05_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A(){};
+		
+		System.out.println("Main Method");
+	}
+}
+
+/* 
+
+error: <anonymous Q05_Anonyonous_Inner_Class$1> is not abstract and does not override abstract method show() in A	
+	A a = new A(){};
+				  ^
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show();
+}
+
+class B extends A 
+{
+	
+}
+
+class Q06_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		System.out.println("Main Method");
+	}
+}
+
+/* 
+
+error: B is not abstract and does not override abstract method show() in A
+class B extends A
+^
+
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show();
+}
+
+class B extends A 
+{
+	void show()
+	{
+		System.out.println("Class B show Method");
+	}
+	
+}
+
+class Q07_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		B b = new B();
+		b.show();
+		System.out.println("Main Method");
+	}
+}
+
+/* 
+
+Class B show Method
+Main Method
+
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show();
+}
+
+class Q08_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A()
+		{
+			void show()
+			{
+				System.out.println("Anonymous Class show Method");
+			}
+		};
+		a.show();
+		System.out.println("Main Method");
+	}
+}
+
+/* 
+
+Anonymous Class show Method
+Main Method
+
+
+After Compile : 
+A.class
+Q10_Anonyonous_Inner_Class_extends.class
+Q10_Anonyonous_Inner_Class_extends$1.class
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show1();
+	abstract void show2();
+}
+
+class Q09_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A()
+		{
+			void show1()
+			{
+				System.out.println("Anonymous Class show Method");
+			}
+		};
+		a.show1();
+		System.out.println("Main Method");
+	}
+}
+
+/* 
+
+error: <anonymous Q08_Anonyonous_Inner_Class$1> is not abstract and does not override abstract method show2() in A
+                {
+                ^
+
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show1();
+	abstract void show2();
+}
+
+class Q10_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A()
+		{
+			void show1()
+			{
+				System.out.println("Anonymous Class show Method - 1");
+			}
+						
+			void show2()
+			{
+				System.out.println("Anonymous Class show Method - 2");
+			}
+			
+		};
+		a.show1();
+		a.show2();
+		System.out.println("Main Method");
+	}
+}
+
+/* 
+
+Anonymous Class show Method - 1
+Anonymous Class show Method - 2
+Main Method
+
+
+
+
+After Compile : 
+A.class
+Q10_Anonyonous_Inner_Class_extends.class
+Q10_Anonyonous_Inner_Class_extends$1.class
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show1();
+}
+
+class Q11_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a1 = new A()
+		{
+			void show1()
+			{
+				System.out.println("First Anonymous Class");
+			}
+		};
+
+		A a2 = new A()
+		{
+			void show1()
+			{
+				System.out.println("Second Anonymous Class");
+			}
+		};
+		
+		a1.show1();
+		a2.show1();
+	}
+}
+
+/* 
+
+First Anonymous Class
+Second Anonymous Class
+
+
+
+After Compile : 
+A.class
+Q11_Anonyonous_Inner_Class_extends.class
+Q11_Anonyonous_Inner_Class_extends$1.class
+Q11_Anonyonous_Inner_Class_extends$2.class
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract int cube(int x);
+}
+
+class Q12_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a1 = new A()
+		{
+			int cube(int x)
+			{
+				return x*x*x;
+			}
+		};
+		
+		int cube1 = a1.cube(10);
+		System.out.println("Cude : " + cube1);
+	}
+}
+
+/* 
+
+Cude : 1000
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show();
+}
+
+class Q13_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		new A()
+		{
+			void show()
+			{
+				System.out.println("Show Method");
+			}
+		}.show();
+	}
+}
+
+/* 
+
+Show Method
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract void show();
+}
+
+class Q14_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A()
+		{
+			void show()
+			{
+				System.out.println("Show Method");
+			}
+		}.show();
+	}
+}
+
+/* 
+
+error: incompatible types: void cannot be converted to A
+    }.show();
+		  ^
+
+.show() method void return kar rahi he or void ko object me types cast nai kar sakte
+OR
+void ka A a(Object) me store nai kar sakte.
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract int cube(int x);
+}
+
+class Q15_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		int cube_data = new A()
+		{
+			int cube(int x)
+			{
+				return x*x*x;
+			}
+		}.cube(5);
+		
+		System.out.println("Cude : " + cube_data);
+	}
+}
+
+/* 
+
+Cude : 125
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract A show();
+}
+
+class Q16_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		A a = new A()
+		{
+			A show()
+			{
+				System.out.println("Show Method");
+				return this;
+			}
+		}.show();
+	}
+}
+
+/* 
+
+show Method
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+abstract class A 
+{
+	abstract A show();
+}
+
+class Q17_Anonyonous_Inner_Class
+{
+	public static void main(String args[])
+	{
+		A a = new A()
+		{
+			A show()
+			{
+				System.out.println("Show Method");
+				return this;
+			}
+		}.show();
+	}
+}
+
+/* 
+
+show Method
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+class Employee
+{
+	void name()
+	{
+		System.out.println("Vishal Soner -1");
+	}
+	
+	void salary()
+	{
+		System.out.println("Salary : 50,000");
+	}
+	
+}
+
+class Q17_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		Employee e1= new Employee();
+		Employee e2= new Employee();
+		Employee e3= new Employee();
+		
+		e1.name();
+		e1.salary();
+		
+		e2.name();
+		e2.salary();
+		
+		e3.name();
+		e3.salary();
+	}
+}
+
+/* 
+
+Vishal Soner -1
+Salary : 50,000
+
+Vishal Soner -1
+Salary : 50,000
+
+Vishal Soner -1
+Salary : 50,000
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+class Employee
+{
+	void name()
+	{
+		System.out.println("Vishal");
+	}
+	
+	void salary()
+	{
+		System.out.println("500");
+	}
+}
+
+class Employee2 extends Employee
+{
+	void salary()
+	{
+		System.out.println("700");
+	}
+}
+
+class Q18_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		Employee e1= new Employee2();
+		Employee e2= new Employee2();
+		Employee e3= new Employee2();
+		
+		e1.name();
+		e1.salary();
+		
+		e2.name();
+		e2.salary();
+		
+		e3.name();
+		e3.salary();
+	}
+}
+
+/* 
+
+Vishal
+700
+
+Vishal
+700
+
+Vishal
+700
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+class Employee
+{
+	void name()
+	{
+		System.out.println("Vishal");
+	}
+	
+	void salary()
+	{
+		System.out.println("500");
+	}
+}
+
+class Q19_Anonyonous_Inner_Class_extends
+{
+	public static void main(String args[])
+	{
+		Employee e1= new Employee()
+		{
+			void salary()
+			{
+				System.out.println("700");
+			}
+		};
+		
+		Employee e2= new Employee();
+		Employee e3= new Employee();
+		
+		e1.name();
+		e1.salary();
+		
+		e2.name();
+		e2.salary();
+		
+		e3.name();
+		e3.salary();
+	}
+}
+
+/* 
+
+Vishal
+700
+
+Vishal
+500
+
+Vishal
+500
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
