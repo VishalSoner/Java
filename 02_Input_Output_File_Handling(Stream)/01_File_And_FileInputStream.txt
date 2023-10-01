@@ -1103,3 +1103,603 @@ Done
 
 
 
+import java.io.*;
+
+class Q27_FileWriter
+{
+	public static void main( String args[]) throws IOException
+	{
+		// FileWriter fw = new FileWriter("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		FileWriter fw = new FileWriter("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt", true);
+		
+		fw.write("Hello Vishal Soner\n");
+		fw.write("Writing the Duplicate Data");
+		
+		fw.close();
+		System.out.println("Done");
+	}
+}
+
+/*
+
+Done
+
+
+
+Ye Data ko Insert ke karega + Old Data ko delete kar dega.
+
+
+
+FileWriter fw = new FileWriter("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt",  true);
+
+Yadi Parameter me true pass kar de to Old data Delete nai hoga + Data insert ho jayega.
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q28_FileReader
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileReader fr = new FileReader("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		char c[] = new char[30];
+		fr.read(c);
+		
+		for( char c1 : c)
+		{
+			System.out.print(c1);
+		}
+		
+		fr.close();
+	}
+}
+
+/*
+Hello Vishal Soner
+Writing the
+
+
+
+Ye Data ko Read ke Liye use karte he.
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q29_FileReader
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileReader fr = new FileReader("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		
+		while( true )
+		{
+			int n = fr.read();
+			if(n == -1)
+				break;
+			System.out.print( (char)n );
+		}
+		
+		fr.close();
+	}
+}
+
+/*
+Hello Vishal Soner
+Writing the Duplicate Data
+----------------------------------------
+*/
+
+
+
+
+
+
+
+/*
+
+To read / write the Primitive Data We use ,
+	DataInputStream   :  is given for reading Primitive data.
+	DataOutputStream  :  is given for Writing Primitive data.
+
+------------------------------------------------------
+	
+	
+To read / write  the Non - Primitive Object We use , 
+	ObjectInputStream   :    is given for reading non-Primitive Object from file.
+	ObjectOutputStream  :    is given for writing non-Primitive Object from file.
+
+*/
+
+import java.io.*;
+
+class Q30_DataOutputStream
+{
+	public static void main( String args[]) throws IOException
+	{
+		int x = 100;
+		float y = 10.50f;
+		boolean tr = true;
+		
+		FileOutputStream fs = new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		//Store Primitive Type Data Using FileOutputStream (Error)
+		
+		fs.write(x);
+		fs.write(y);
+		fs.write(tr);
+		fs.close();
+		
+	}
+}
+
+/*
+
+
+error: no suitable method found for write(float)
+    fs.write(y);
+      ^
+error: no suitable method found for write(boolean)
+    fs.write(tr);
+      ^
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+/* 
+DataOutputStream  :  To Write the primitive Data into file.
+	1. void writeByte( byte );
+	2. void writeShort( short );
+	3. void writeInt( int );
+	4. void writeLong( long );
+	5. void writeFloat( float );
+	6. void writeDouble( double );
+	7. void writeBoolean(boolean);
+
+=====================================================================
+*/
+import java.io.*;
+
+class Q31_DataOutputStream
+{
+	public static void main( String args[]) throws IOException
+	{
+		int x = 100;
+		float y = 10.50f;
+		boolean tr = true;
+		
+		FileOutputStream fs = new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		//Store Primitive Type Data Using FileOutputStream
+		DataOutputStream ds = new DataOutputStream(fs);
+		
+		ds.writeInt(x);
+		ds.writeFloat(y);
+		ds.writeBoolean(tr);
+		
+		ds.close();
+		fs.close();
+		
+		System.out.println("Done");
+	}
+}
+
+/*
+
+Done
+
+------------------------------------------------------
+
+// DataOutputStream Se data insert to ho jayega but ham eshe file se directly access nai kar sakte he 
+
+To read the Data From File.
+DataInputStream : 
+	1. readByte( byte );
+	2. readShort( short  );
+	3. readInt ( int );
+	4. readLong( long );
+	5. readFloat( float );
+	6. readDouble( double );
+	7. readBoolean( boolean );
+
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q33_DataInputStream
+{
+	public static void main( String args[]) throws IOException
+	{
+		int x = 100;
+		float y = 10.50f;
+		boolean tr = true;
+		
+		FileInputStream fs = new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		//Read Primitive Type Data Using FileInputStream.
+		DataInputStream ds = new DataInputStream(fs);
+		
+		// char c[] = new char[ ds.available() ];
+		byte c[] = new byte[ ds.available() ];
+		ds.readFully(c);
+		
+		for( byte c1 : c)
+		{
+			System.out.println(	c1 );
+		}
+		
+		ds.close();
+		fs.close();
+	}
+}
+
+/*
+
+100
+10.5
+true
+
+------------------------------------------------------
+
+// DataOutputStream Se data insert to ho jayega but ham eshe file se directly access nai kar sakte he 
+
+----------------------------------------
+*/
+
+
+
+
+
+
+
+/* 
+All Object Are Store in Heap Memory.
+
+Non-Primitive Class ka use Object ko ek file me Store karne ke liye karte he.
+--------------------------------------------------------------------------------------------------------
+
+Serialization : Preserving State of an Objects. (ObjectOutputStream)
+				Serialization is a mechanism of writing the state of an object into a byte-stream. It is mainly used in Hibernate, JPA technologies.
+
+
+De-serialization : Reading State of an Objects. (ObjectInputStream)
+				    The reverse operation of serialization is called de-serialization where byte-stream is converted into an object. 
+				    The serialization and deserialization process is platform-independent, 
+				    it means you can serialize an object on one platform and deserialize it on a different platform.
+
+
+--------------------------------------------------------------------------------------------------------
+
+1. if you want to save the Object of a Class, you need to mark it as serialize, That
+2. we can do by implement (java.io.serializable interface) the Serializable interface for serializing the object.
+
+--------------------------------------------------------------------------------------------------------
+
+For serializing the object, we call the writeObject() method of ObjectOutputStream class,  and 
+For deserialization we call the readObject() method of ObjectInputStream class.
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+java.io.Serializable interface
+
+1. Serializable is a marker interface (has no data member and method). 
+2. It is used to "mark" Java classes so that the objects of these classes may get a certain capability. 
+3. The Cloneable and Remote are also marker interfaces.
+
+The Serializable interface must be implemented by the class whose object needs to be persisted.
+
+The String class and all the wrapper classes implement the java.io.Serializable interface by default.
+
+
+
+
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+
+// Without implement Serializable Interface (marker Interface)
+class Game
+{
+	private int id;
+	private String name;
+	private int age;
+	private long contact;
+	
+	public void play()
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Swap Two Number Program");
+		System.out.print("Enter 1st Element : ");
+		int x = sc.nextInt();
+		
+		System.out.print("Enter 2st Element : ");
+		int y = sc.nextInt();
+		
+		int temp = x;
+		x = y;
+		y = temp;
+		
+		System.out.print("1st Element : " + x);
+		System.out.print("2st Element : " + y);
+	}
+}
+
+class Q35_ObjectOutputStream
+{
+	public static void main( String args[]) throws IOException
+	{
+		FileOutputStream fs = new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		ObjectOutputStream os = new ObjectOutputStream(fs);
+		
+		Game g1 = new Game();
+		os.writeObject(g1);
+
+		System.out.println("Stored");
+
+		fs.close();
+		os.close();
+		
+	}
+}
+
+/*
+Exception in thread "main" java.io.NotSerializableException: Game
+
+------------------------------------------------------
+*/
+
+
+
+
+
+
+
+( ** Folder/pkg : Game.java )
+package pkg;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Game implements Serializable
+{
+	private int id;
+	private String name;
+	private int age;
+	private long contact;
+	
+	public void play()
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter Id : ");
+		id = sc.nextInt();
+		
+		System.out.print("Enter Name : ");
+		name = sc.next();
+
+		System.out.print("Enter Age : ");
+		age = sc.nextInt();
+		
+		System.out.print("Enter Contact No. : ");
+		contact = sc.nextLong();
+		
+		display_Data();
+	}
+	
+	public void display_Data()
+	{
+		System.out.println("-------------------");
+		System.out.println("| Id      : " + id	  	+ "    |");
+		System.out.println("| Name    : " + name	+ "    |");
+		System.out.println("| Age     : " + age	  	+ "    |");
+		System.out.println("| Contact : " + contact + "    |" );
+		System.out.println("-------------------");
+	}
+}
+
+
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+class Q36_ObjectOutputStream
+{
+	public static void main( String args[]) throws IOException
+	{
+		pkg.Game g1 = new pkg.Game();
+		g1.play();
+		
+		FileOutputStream fs = new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		ObjectOutputStream os = new ObjectOutputStream(fs);
+		
+		os.writeObject(g1);
+
+		System.out.println("Stored");
+
+		fs.close();
+		os.close();
+		
+	}
+}
+
+/*
+
+
+
+------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q37_ObjectInputStream
+{
+	public static void main( String args[]) throws Exception
+	{
+		FileInputStream fs1 = new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		ObjectInputStream os1 = new ObjectInputStream(fs1);
+		
+		pkg.Game g2 = (pkg.Game)os1.readObject(); 
+		g2.display_Data();
+		
+		fs1.close();
+		os1.close();
+	}
+}
+
+/*
+// 1st Time Compile :
+-------------------
+| Id      : 10    |
+| Name    : 20    |
+| Age     : 30    |
+| Contact : 40    |
+-------------------
+------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+import java.io.*;
+
+class Q38_ObjectInputStream
+{
+	public static void main( String args[]) throws Exception
+	{
+		FileInputStream fs1 = new FileInputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		ObjectInputStream os1 = new ObjectInputStream(fs1);
+		
+		
+		
+		pkg.Game g2 = (pkg.Game)os1.readObject(); 
+		g2.display_Data();
+		
+		fs1.close();
+		os1.close();
+		
+		pkg.Game g1 = new pkg.Game();
+		g1.play();
+		/* ------------------------------------------------------ */
+		
+		FileOutputStream fs2 = new FileOutputStream("D:/2_All_Code/02_Input_Output_File_Handling(Stream)/Demo2.txt");
+		
+		ObjectOutputStream os2 = new ObjectOutputStream(fs2);
+		
+		os2.writeObject(g1);
+
+		System.out.println("Stored");
+
+		fs2.close();
+		os2.close();
+	}
+}
+
+/*
+// 1st Time Compile :
+-------------------
+| Id      : 10    |
+| Name    : 20    |
+| Age     : 30    |
+| Contact : 40    |
+-------------------
+
+Enter Id : 50
+Enter Name : 60
+Enter Age : 70
+Enter Contact No. : 80
+-------------------
+| Id      : 50    |
+| Name    : 60    |
+| Age     : 70    |
+| Contact : 80    |
+-------------------
+Stored
+
+
+
+// 2st Time Compile :
+D:\2_All_Code\02_Input_Output_File_Handling(Stream)>java Q37_ObjectInputStream
+-------------------
+| Id      : 50    |
+| Name    : 60    |
+| Age     : 70    |
+| Contact : 80    |
+-------------------
+
+Enter Id : 101
+Enter Name : 102
+Enter Age : 103
+Enter Contact No. : 104
+-------------------
+| Id      : 101    |
+| Name    : 102    |
+| Age     : 103    |
+| Contact : 104    |
+-------------------
+
+------------------------------------------------------
+*/
+

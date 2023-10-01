@@ -1,0 +1,49 @@
+/* 
+All Object Are Store in Heap Memory.
+
+Non-Primitive Class ka use Object ko ek file me Store karne ke liye karte he.
+--------------------------------------------------------------------------------------------------------
+
+Serialization : Preserving State of an Objects. (ObjectOutputStream)
+				Serialization is a mechanism of writing the state of an object into a byte-stream. It is mainly used in Hibernate, JPA technologies.
+
+
+De-serialization : Reading State of an Objects. (ObjectInputStream)
+				    The reverse operation of serialization is called de-serialization where byte-stream is converted into an object. 
+				    The serialization and deserialization process is platform-independent, 
+				    it means you can serialize an object on one platform and deserialize it on a different platform.
+
+
+--------------------------------------------------------------------------------------------------------
+
+1. if you want to save the Object of a Class, you need to mark it as serialize, That
+2. we can do by implement (java.io.serializable interface) the Serializable interface for serializing the object.
+
+--------------------------------------------------------------------------------------------------------
+
+For serializing the object, we call the writeObject() method of ObjectOutputStream class,  and 
+For deserialization we call the readObject() method of ObjectInputStream class.
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+java.io.Serializable interface
+
+1. Serializable is a marker interface (has no data member and method). 
+2. It is used to "mark" Java classes so that the objects of these classes may get a certain capability. 
+3. The Cloneable and Remote are also marker interfaces.
+
+The Serializable interface must be implemented by the class whose object needs to be persisted.
+
+The String class and all the wrapper classes implement the java.io.Serializable interface by default.
+
+
+
+
+
+
+
+
+
