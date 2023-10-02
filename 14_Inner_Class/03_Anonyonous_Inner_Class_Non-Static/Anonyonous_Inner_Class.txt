@@ -1,3 +1,9 @@
+A nested class that doesn't have any name is known as an anonymous class.
+An anonymous class must be defined inside another class. Hence, it is also known as an anonymous inner class. Its syntax is:
+
+
+
+
 abstract class A 
 {
 	void show()
@@ -24,6 +30,7 @@ error: A is abstract; cannot be instantiated
 
 -----------------------------------------------------------------------------------------------
 */
+
 
 
 abstract class A 
@@ -745,3 +752,732 @@ Vishal
 
 
 
+
+interface Inter1
+{
+	void show();
+}
+
+class Q20_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1();
+	}
+}
+
+/* 
+error: Inter1 is abstract; cannot be instantiated
+                Inter1 in1 = new Inter1();
+                             ^
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+interface Inter1
+{
+	void show();
+}
+
+class Q21_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1(){};
+	}
+}
+
+/* 
+error: <anonymous Q21_Anonyonous_Inner_Class_implements$1> is not abstract and does not override abstract method show() in Inter1
+                Inter1 in1 = new Inter1(){};
+                                         ^
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+interface Inter1
+{
+	void show();
+}
+
+class A implements Inter1
+{
+	void show()
+	{
+		System.out.println("Vishal Soner");
+	}
+}
+
+class Q22_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/* 
+ error: show() in A cannot implement show() in Inter1
+        void show()
+             ^
+  attempting to assign weaker access privileges; was public
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+interface Inter1
+{
+	void show();
+}
+
+class A implements Inter1
+{
+	public void show()
+	{
+		System.out.println("Vishal Soner");
+	}
+}
+
+class Q23_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/* 
+Vishal Soner
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	void show();
+}
+
+class Q24_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1()
+		{
+			void show()
+			{
+				System.out.println("Vishal Soner");
+			}
+		};
+		
+		in1.show();
+	}
+}
+
+/* 
+error: show() in <anonymous Q22_Anonyonous_Inner_Class_implements$1> cannot implement show() in Inter1
+                        void show()
+                             ^
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+interface Inter1
+{
+	void show();
+}
+
+class Q25_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1()
+		{
+			public void show()
+			{
+				System.out.println("Vishal Soner");
+			}
+		};
+		
+		in1.show();
+	}
+}
+
+/* 
+Vishal Soner
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+interface Inter1
+{
+	void show1();
+	void show2();
+}
+
+class Q26_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1()
+		{
+			public void show1()
+			{
+				System.out.println("Vishal Soner");
+			}
+		};
+		
+		in1.show1();
+	}
+}
+
+/* 
+
+error: <anonymous Q26_Anonyonous_Inner_Class_implements$1> is not abstract and does not override abstract method show2() in Inter1
+                {
+                ^
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+interface Inter1
+{
+	void show1();
+	void show2();
+}
+
+class Q27_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1()
+		{
+			public void show1()
+			{
+				System.out.println("Show - 1");
+			}
+
+			public void show2()
+			{
+				System.out.println("Show - 2");
+			}
+		};
+		
+		in1.show1();
+		in1.show2();
+	}
+}
+
+/* 
+
+Show - 1
+Show - 2
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int cude(int x);
+}
+
+class Q28_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1()
+		{
+			public int cude(int x)
+			{
+				return x*x*x;
+			}
+		};
+		
+		System.out.println("Cude : " + in1.cude(10) );
+	}
+}
+
+/* 
+
+Cude : 1000
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int cude(int x);
+}
+
+class Q29_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = new Inter1()
+		{
+			public int cude(int x)
+			{
+				return x*x*x;
+			}
+		}.cude(10);
+		
+	}
+}
+
+/* 
+
+error: incompatible types: int cannot be converted to Inter1
+                }.cude(10);
+                      ^
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int cude(int x);
+}
+
+class Q30_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		int in1 = new Inter1()
+		{
+			public int cude(int x)
+			{
+				return x*x*x;
+			}
+		}.cude(10);
+	
+		System.out.println("Cude : " + in1 );
+	}
+}
+
+/*
+
+Cude : 1000
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int cude(int x);
+}
+
+class Q31_Anonyonous_Inner_Class_implements
+{
+	public static void main(String args[])
+	{
+		int in1 = new Inter1()
+		{
+			public int cude(int x)
+			{
+				return x*x*x;
+			}
+		};
+	
+		System.out.println("Cude : " + in1.cude(10) );
+	}
+}
+
+/*
+
+ error: incompatible types: <anonymous Inter1> cannot be converted to int
+                int in1 = new Inter1()
+                          ^
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	1. Function Interface : is a Interface that contains only one abstract method.
+	2. Lambda Expresion   : Function Interface me woek karta he,  ye version 1.8 me add hua he.
+	
+*/
+
+interface Inter1
+{
+	void show();
+}
+
+class Q32_Function_Interface
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = ()->{		System.out.println("Function Interface");		};
+		in1.show();
+		in1.show();
+	}
+}
+
+/*
+
+Function Interface
+Function Interface
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+/*
+	1. Function Interface : is a Interface that contains only one abstract method.
+	2. Lambda Expresion   : Function Interface me woek karta he,  ye version 1.8 me add hua he.
+	
+*/
+
+interface Inter1
+{
+	void show();
+}
+
+class Q33_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = ()->{		System.out.println("Lambda Expresion - 1");		};
+		in1.show();
+		
+		//Also do like this :
+		Inter1 in2 = ()->	System.out.println("Lambda Expresion - 2");		;
+		in2.show();
+	}
+}
+
+/*
+
+Lambda Expresion - 1
+Lambda Expresion - 2
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	void show();
+}
+
+class Q34_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = ()->{		
+							System.out.println("Lambda Expresion - 1");		
+							System.out.println("Lambda Expresion - 2");
+						};
+		in1.show();
+	}
+}
+
+/*
+
+Lambda Expresion - 1
+Lambda Expresion - 2
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	void show();
+}
+
+class Q35_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = ()->
+		System.out.println("Lambda Expresion - 1");		
+		System.out.println("Lambda Expresion - 2");
+		
+		in1.show();
+	}
+}
+
+/*
+
+Lambda Expresion - 2
+Lambda Expresion - 1
+
+
+
+Internally : Work like this.
+Inter1 in1 = ()->System.out.println("Lambda Expresion - 1");		
+
+System.out.println("Lambda Expresion - 2");
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int cude(int x);
+}
+
+class Q36_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = (int x)->
+		{
+			return x*x*x;
+		};
+		
+		System.out.println("Cude : " + in1.cude(10) );
+	}
+}
+
+/*
+Cude : 1000
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int cude(int x);
+}
+
+class Q37_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = (int x)->{			return x*x*x;		};
+		System.out.println("Cude : " + in1.cude(2) );
+		
+		Inter1 in2 = (x)->{			return x*x*x;		};
+		System.out.println("Cude : " + in2.cude(3) );
+		
+		Inter1 in3 = x->{			return x*x*x;		};
+		System.out.println("Cude : " + in3.cude(4) );
+		
+		
+	}
+}
+
+/*
+Cude : 8
+Cude : 27
+Cude : 64
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int multi(int x, int y);
+}
+
+class Q38_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		// 01
+		Inter1 in1 = (int x, int y)->{			return x*y;			};
+		System.out.println("Multi : " + in1.multi(10, 5) );
+		
+		// 02
+		Inter1 in2 = (x, y)->{					    return x*y;			};
+		System.out.println("Multi : " + in2.multi(10, 25) );
+		
+		//03
+		// Inter1 in3 = x,y->{					    return x*y;			};
+		// System.out.println("Multi : " + in3.multi(10, 50) );
+		
+		
+	}
+}
+
+/*
+// 01
+Multi : 50
+
+// 02
+Multi : 250
+
+// 03
+error: ';' expected
+	Inter1 in3 = x,y->{                                         return x*y;                 };
+                   ^
+
+
+
+-----------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+interface Inter1
+{
+	int multi(int x, int y);
+}
+
+class Q39_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		Inter1 in = (int x, int y)->	return x*y;	
+		Inter1 in = (x, y)->	return x*y;			//Same Error
+		
+		System.out.println("Cude : " + in.multi(10, 20));
+	}
+}
+
+
+/*
+
+ error: illegal start of expression
+    Inter1 in = (int x, int y)->    return x*y;
+                            ^
+
+
+--------------------------------------------------------
+*/
+
+
+
+
+interface Inter1
+{
+	int multi(int x, int y);
+}
+
+class Q40_Lambda_Expresion
+{
+	public static void main(String args[])
+	{
+		Inter1 in1 = (int x, int y)->	x*y;	
+		System.out.println("Cude : " + in1.multi(10, 5));
+		
+		Inter1 in2 = (x, y)->	x*y;			//Same Work
+		System.out.println("Cude : " + in2.multi(10, 10));
+	}
+}
+
+
+/*
+
+Cude : 50
+Cude : 100
+
+
+
+--------------------------------------------------------
+*/
