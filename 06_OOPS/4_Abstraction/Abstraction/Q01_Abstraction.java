@@ -1,4 +1,4 @@
-abstraction class A
+abstract class A
 {
 	
 }
@@ -11,6 +11,8 @@ class Q01_Abstraction
 }
 
 /* 
+
+Compile  And  Run
 --------------------------------------------------------------------------------------------- 
 */
 
