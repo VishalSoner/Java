@@ -2031,6 +2031,357 @@ class Q53_Instance_Inner_Class
 
 
 
+class Q54_Instance_Inner_Class
+{
+	class A
+	{
+		void show()
+		{
+			System.out.println("Show Method");
+		}
+	}
+	public static void main( String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/*
+
+ error: non-static variable this cannot be referenced from a static context
+                A a = new A();
+                      ^
+
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+class Q55_Instance_Inner_Class
+{
+	static class A
+	{
+		void show()
+		{
+			System.out.println("Show Method");
+		}
+	}
+	public static void main( String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/*
+
+show Method
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Q56_Instance_Inner_Class
+{
+	static class A
+	{
+		static int x = 100;
+		static void show()
+		{
+			System.out.println("Show Method");
+		}
+	}
+	public static void main( String args[])
+	{
+		A a = new A();
+		a.show();
+	}
+}
+
+/*
+
+show Method
+
+
+Ham Static Class ke andar Static variable and Method bana sakte he,
+But 
+Static Method ke andara Static Variable Nai bana sakte.
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class Q57_Instance_Inner_Class
+{
+	class A
+	{
+		int x = 100;
+		
+		void show()
+		{
+			System.out.println("Show Method");
+		}
+	}
+	public static void main( String args[])
+	{
+		Q56_Instance_Inner_Class.A a = new Q56_Instance_Inner_Class.A();
+		a.show();
+	}
+}
+
+/*
+
+show Method
+
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class Q58_Instance_Inner_Class
+{
+	static class A
+	{
+		public static void main( String args[])
+		{
+			System.out.println("Main Class - 2");
+		}
+	}
+	public static void main( String args[])
+	{
+		System.out.println("Main Class - 1");
+		
+		A a = new A();
+		
+	}
+}
+
+/*
+Compile : javac Q58_Instance_Inner_Class.java
+
+
+// 01		Run : java Q58_Instance_Inner_Class
+Main Class - 1
+
+
+// 02		Run : java Q58_Instance_Inner_Class$A
+Main Class - 2
+
+
+After Comepile
+Q58_Instance_Inner_Class.class
+Q58_Instance_Inner_Class$A.class
+
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class Q59_Instance_Inner_Class
+{
+	static class A
+	{
+		public static void main( String args[])
+		{
+			System.out.println("Main Class - 2");
+		}
+	}
+	public static void main( String args[])
+	{
+		System.out.println("Main Class - 1");
+		
+		Q59_Instance_Inner_Class.A  a  = new  Q59_Instance_Inner_Class.A();
+		
+		//if We Call Main method Implicitly It can't Allow.
+		a.main();
+		
+	}
+}
+
+/*
+error: method main in class A cannot be applied to given types;
+                a.main();
+                 ^
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class A	
+{
+	static class B
+	{
+		public static void main( String args[])
+		{
+			System.out.println("Main Class - 2");
+		}
+	}
+}
+
+class Q60_Instance_Inner_Class
+{
+	public static void main( String args[])
+	{
+		System.out.println("Main Class - 1");
+		
+		A a = new A();
+		
+		A.B b = new A.B();
+		
+	}
+}
+
+/*
+
+Compile : javac Q60_Instance_Inner_Class.java
+
+// 01  :  Run java Q60_Instance_Inner_Class
+Main Class - 1
+
+
+// 02  :  Run java A$B
+Main Class - 2
+
+
+// 03  :  Run java A
+Error: Main method not found in class A, please define the main method as:
+
+
+
+
+After Compile :
+A.class
+A$B.class
+Q60_Instance_Inner_Class.class
+
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+class A	
+{
+	class B
+	{
+		public static void main( String args[])
+		{
+			System.out.println("Main Class - 2");
+		}
+	}
+}
+
+class Q61_Instance_Inner_Class
+{
+	public static void main( String args[])
+	{
+		System.out.println("Main Class - 1");
+		
+		A a = new A();
+		
+		A.B b = new A.B();
+		
+	}
+}
+
+/*
+
+Compile : javac Q61_Instance_Inner_Class.java
+
+error: Illegal static declaration in inner class A.B
+                public static void main( String args[])
+                                   ^
+  modifier 'static' is only allowed in constant variable declarations
+Q61_Instance_Inner_Class.java:20: error: an enclosing instance that contains A.B is required
+                A.B b = new A.B();
+                        ^
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+/*
+Java Not Allow to Create Static Method in Inner Class.
+Java Allow to Create Static Method in Static Inner Class.
+
+*/
+
+class A	
+{
+	class B
+	{
+		static void Show( String args[])
+		{
+			System.out.println("Show Method");
+		}
+	}
+}
+
+class Q62_Instance_Inner_Class
+{
+	public static void main( String args[])
+	{
+		System.out.println("Main Class - 1");
+		
+		A a = new A();
+		
+		A.B b = new A.B();
+		
+	}
+}
+
+/*
+
+
+error: Illegal static declaration in inner class A.B
+                static void Show( String args[])
+                            ^
+
+--------------------------------------------------------------------------------------
+*/
+
+
+
+
 
 
 

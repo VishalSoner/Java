@@ -1,28 +1,25 @@
-
-class Q53_Instance_Inner_Class
+class Q57_Instance_Inner_Class
 {
 	class A
 	{
+		int x = 100;
+		
 		void show()
 		{
-			
+			System.out.println("Show Method");
 		}
 	}
 	public static void main( String args[])
 	{
-		A a = new A();
-		
-		A.C c = a.new C();
-		
+		Q56_Instance_Inner_Class.A a = new Q56_Instance_Inner_Class.A();
+		a.show();
 	}
 }
 
 /*
 
+show Method
 
- A.C is not abstract and does not override abstract method show() in A.B
-        class C extends B
-        ^
 --------------------------------------------------------------------------------------
 */
 
