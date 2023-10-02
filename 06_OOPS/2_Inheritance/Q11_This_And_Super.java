@@ -1,4 +1,4 @@
-class A
+lass A
 {
 	int x = 30;
 }
@@ -23,7 +23,7 @@ class B extends A
 	}
 }
 
-class Q11
+class Q11_This_And_Super
 {
 	public static void main(String args[])
 	{
