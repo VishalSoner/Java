@@ -324,3 +324,298 @@ error: cannot find symbol
 
 
 
+class A
+{
+	void show1()
+	{
+		System.out.println("Show - 1");
+	}
+
+	void show2()
+	{
+		System.out.println("Show - 2");
+	}
+}
+
+class Q07_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().show1();
+	}
+}
+/* 
+Show - 1
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show1()
+	{
+		System.out.println("Show - 1");
+	}
+
+	void show2()
+	{
+		System.out.println("Show - 2");
+	}
+}
+
+class Q08_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		A a = new A().show1();
+	}
+}
+/* 
+error: incompatible types: void cannot be converted to A
+                A a = new A().show1();
+                                   ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	void show1()
+	{
+		System.out.println("Show - 1");
+	}
+
+	void show2()
+	{
+		System.out.println("Show - 2");
+	}
+}
+
+class Q09_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().show1().show2();
+	}
+}
+/* 
+ error: void cannot be dereferenced
+	new A().show1().show2();
+	                ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int show1()
+	{
+		System.out.println("Show - 1");
+		return 10;
+	}
+
+	void show2()
+	{
+		System.out.println("Show - 2");
+	}
+}
+
+class Q10_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().show1().show2();
+	}
+}
+/* 
+  error: int cannot be dereferenced
+    new A().show1().show2();
+                    ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	A show1()
+	{
+		System.out.println("Show - 1");
+		return new A();
+	}
+	
+	void show2()
+	{
+		System.out.println("Show - 2");
+	}
+	
+}
+
+class Q11_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().show1().show2();
+	}
+}
+/* 
+Show - 1
+Show - 2
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	A get(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+		return new A();
+	}
+	
+	void show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+	}
+	
+}
+
+class Q12_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().get(10, 20).show();
+	}
+}
+/* 
+X : 0
+Y : 0
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	A get(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+		return this;
+	}
+	
+	void show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+	}
+	
+}
+
+class Q13_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().get(10, 20).show();
+	}
+}
+/* 
+X : 10
+Y : 20
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	A get(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+		return this;
+	}
+	
+	void show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+	}
+	
+}
+
+class Q14_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().get(10, 20).show().show();
+	}
+}
+/* 
+error: void cannot be dereferenced
+      new A().get(10, 20).show().show();
+	                             ^
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
+class A
+{
+	int x, y;
+	A get(int x, int y)
+	{
+		this.x = x;
+		this.y = y;
+		return this;
+	}
+	
+	A show()
+	{
+		System.out.println("X : " + x);
+		System.out.println("Y : " + y);
+		System.out.println();
+		return this;
+	}
+	
+}
+
+class Q15_Method_Chaining
+{
+	public static void main(String args[])
+	{
+		new A().get(10, 20).show().show().show();;
+	}
+}
+/* 
+X : 10
+Y : 20
+
+X : 10
+Y : 20
+
+X : 10
+Y : 20
+--------------------------------------------------------------------------------------------- 
+*/
+
+
+
+
